@@ -1,21 +1,11 @@
-import html from './html.js';
-import Header from './header.js';
+import highscoreApi from '../api/highscore-api.js';
 
-function makeTemplate() {
-    return html`
-        <header></header>
-    `;
-}
+const form = document.getElementById('userInfo');
 
-class App {
-    render() {
-        const dom = makeTemplate();
-        const headerSection = dom.querySelector('header');
-        const header = new Header();
-        headerSection.appendChild(header.render());
-        return dom;
-    }
-}
-
-const app = new App();
-document.getElementById('header').appendChild(app.render());
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    const username = event.target.elements.username.value;
+    
+    highscoreApi.init(username);
+    window.location = 'html/game.html';
+});
