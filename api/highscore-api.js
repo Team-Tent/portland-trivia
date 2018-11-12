@@ -1,7 +1,7 @@
 class User{
-    constructor(username, highscore){
+    constructor(username, score){
         this.username = username;
-        this.highscore = highscore;
+        this.score = score;
     }
 }
 
