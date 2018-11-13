@@ -22,7 +22,7 @@ const highscoreApi = {
 
         game.score += score;
 
-        localStorage.setItem('users', JSON.stringify(game));
+        localStorage.setItem('game', JSON.stringify(game));
     },
 
     storeFinalGame() {

@@ -15,19 +15,19 @@ function makeTemplate() {
                 <th>Social</th>
             </tr>
             <tr>
-                <td><button name="choice" class="landmarks">$100</button></td>
-                <td><button name="choice" class="culture">$100</button></td>
-                <td><button name="choice" class="social">$100</button></td>
+                <td><button name="choice" class="landmarks" value="100">$100</button></td>
+                <td><button name="choice" class="culture" value="100">$100</button></td>
+                <td><button name="choice" class="social" value="100">$100</button></td>
             </tr>
             <tr>
-                <td><button name="choice" class="landmarks">$200</button></td>
-                <td><button name="choice" class="culture">$200</button></td>
-                <td><button name="choice" class="social">$200</button></td>
+                <td><button name="choice" class="landmarks" value="200">$200</button></td>
+                <td><button name="choice" class="culture" value="200">$200</button></td>
+                <td><button name="choice" class="social" value="200">$200</button></td>
             </tr>
             <tr>
-                <td><button name="choice" class="landmarks">$300</button></td>
-                <td><button name="choice" class="culture">$300</button></td>
-                <td><button name="choice" class="social">$300</button></td>
+                <td><button name="choice" class="landmarks" value="300">$300</button></td>
+                <td><button name="choice" class="culture" value="300">$300</button></td>
+                <td><button name="choice" class="social" value="300">$300</button></td>
             </tr>
         </table>
     `;
@@ -90,7 +90,7 @@ class Round {
         const roundDifficulty = this.questions[currentRound];
         getRandomQuestion(roundDifficulty, category);
     }
-    checkAnswer() {
+    checkAnswer(score) {
         const form = document.getElementById('activeQuestion');
         if(form){
         
@@ -105,8 +105,10 @@ class Round {
                     for(let i = rootLength; i > 3; i--) {
                         root.removeChild(root.lastChild);
                     }
-                    
                     if(event.target.id === selectedQuestion.correctAnswer) {
+                        highscoreApi.updateScore(score);
+                        
+                        
                         // you click correct answer
                         // add points of this question, to total points
                         // bring back to game
