@@ -3,13 +3,13 @@ import html from './html.js';
 function makeTemplate() {
     return html`
         <div>
-            <img class="logo" src="../assets/tent.png">
+            <img class="logo" src="../assets/tent-drawing-cartoon-3.png">
             <h1>Portland Jeopardy</h1>
         </div>
         <nav>
-            <a href="../index.html">Home</a>
-            <a href="../html/about.html">About</a>
-            <a href="../html/highscore.html">High Scores</a>
+            <a id="home" href="../index.html"><strong>Home</strong></a>
+            <a id="about" href="../html/about.html"><strong>About</strong></a>
+            <a id="highscores" href="../html/highscore.html"><strong>High Scores</strong></a>
         </nav>
     `;
 }

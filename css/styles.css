@@ -1,11 +1,6 @@
 button:disabled {
     background-color: red;
 }
-
-#header {
-    background: black;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#home {
+    color: rgb(254, 203, 7);
 }
