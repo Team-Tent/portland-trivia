@@ -66,7 +66,20 @@ function getRandomQuestion(roundDifficulty, category) {
 function populateForm(selectedQuestion) {
     return html `
         <form id="activeQuestion" class="hidden">
-        <button type="submit">blah</button></form>
+            <p><strong>${selectedQuestion.question}</strong></p>
+            <label for="buttonA"></label>
+            <p id="buttonA" value="answerA"></p>
+            ${selectedQuestion.answerA}
+            <label for="buttonB"></label>
+            <p id="buttonB" value="answerB"></p>
+            ${selectedQuestion.answerB}            
+            <label for="buttonC"></label>
+            <p id="buttonC" value="answerC"></p>
+            ${selectedQuestion.answerC}
+            <label for="buttonD"></label>
+            <p id="buttonD" value="answerD"></p>
+            ${selectedQuestion.answerD}
+        </form>
     `;
 }
 
