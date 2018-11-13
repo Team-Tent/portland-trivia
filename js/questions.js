@@ -14,26 +14,26 @@ function makeTemplate() {
                 <th>Social</th>
             </tr>
             <tr>
-                <td><button class="landmarks">$100</button></td>
-                <td><button class="culture">$100</button></td>
-                <td><button class="social">$100</button></td>
+                <td><button name="choice" class="landmarks">$100</button></td>
+                <td><button name="choice" class="culture">$100</button></td>
+                <td><button name="choice" class="social">$100</button></td>
             </tr>
             <tr>
-                <td><button class="landmarks">$200</button></td>
-                <td><button class="culture">$200</button></td>
-                <td><button class="social">$200</button></td>
+                <td><button name="choice" class="landmarks">$200</button></td>
+                <td><button name="choice" class="culture">$200</button></td>
+                <td><button name="choice" class="social">$200</button></td>
             </tr>
             <tr>
-                <td><button class="landmarks">$300</button></td>
-                <td><button class="culture">$300</button></td>
-                <td><button class="social">$300</button></td>
+                <td><button name="choice" class="landmarks">$300</button></td>
+                <td><button name="choice" class="culture">$300</button></td>
+                <td><button name="choice" class="social">$300</button></td>
             </tr>
         </table>
     `;
 }
 let chosen = [];
 
-function getQuestion(roundDifficulty, category) {
+function getRandomQuestion(roundDifficulty, category) {
     let options = [];
     
     if(chosen.length < 9) {
@@ -49,13 +49,25 @@ function getQuestion(roundDifficulty, category) {
             index = Math.floor(Math.random() * options.length);
         }
         
-        chosen.push(options[index]);
-    
-        console.log('chosen', chosen);
-        console.log('options', options);
-    }
+        const selectedQuestion = options[index];
+        chosen.push(selectedQuestion);
+        const root = document.getElementById('root');
+        const dom = populateForm(selectedQuestion);
+        root.appendChild(dom);
+        // const form = dom.getElementById('activeQuestion');
+        // console.log(dom);
+        // form.addEventListener('submit', () => {
+        //     console.log('answered');
+        // });
 
-    
+    }
+}
+
+function populateForm(selectedQuestion) {
+    return html `
+        <form id="activeQuestion" class="hidden">
+        <button type="submit">blah</button></form>
+    `;
 }
 
 class Round {
@@ -70,10 +82,7 @@ class Round {
     }
     getQuestion(currentRound, category) {
         const roundDifficulty = this.questions[currentRound];
-        // const index = roundDifficulty.findIndex(question => {
-        //     return question.category === category;
-        // });
-        getQuestion(roundDifficulty, category);
+        getRandomQuestion(roundDifficulty, category);
     }
 }
 

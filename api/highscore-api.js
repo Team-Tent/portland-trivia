@@ -54,7 +54,7 @@ const highscoreApi = {
         } else {
             allGames = [game];
         }
-        console.log(user);
+        // console.log(user);
 
         localStorage.setItem('allGames', JSON.stringify((allGames))); 
     }
