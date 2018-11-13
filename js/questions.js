@@ -82,7 +82,10 @@ function populateForm() {
 }
 
 function gameOver() {
-    
+    const choices = document.querySelectorAll('button[name="choice"]');
+    choices.forEach(choice => {
+        choice.disabled = true;
+    });
     return html`
         <h2>Game Over!</h2>
         <button onclick="window.location='../html/highscore.html'">View High Scores</button>
