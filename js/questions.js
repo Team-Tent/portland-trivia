@@ -34,8 +34,9 @@ function makeTemplate() {
 
 function getQuestion(roundDifficulty, category) {
     let options = [];
+    let chosen = [];
     roundDifficulty.forEach(element => {
-        if(element.category === category) {
+        if(element.category === category && !chosen.includes(element)) {
             options.push(element);
         }
     });
