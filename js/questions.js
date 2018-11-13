@@ -31,15 +31,31 @@ function makeTemplate() {
         </table>
     `;
 }
+let chosen = [];
 
 function getQuestion(roundDifficulty, category) {
     let options = [];
-    let chosen = [];
-    roundDifficulty.forEach(element => {
-        if(element.category === category && !chosen.includes(element)) {
-            options.push(element);
+    
+    if(chosen.length < 9) {
+        roundDifficulty.forEach(element => {
+            if(element.category === category && !chosen.includes(element)) {
+                options.push(element);
+            }
+        });
+        
+        let index = Math.floor(Math.random() * options.length);
+        
+        while(chosen.includes(options[index]) && chosen.length < 9) {
+            index = Math.floor(Math.random() * options.length);
         }
-    });
+        
+        chosen.push(options[index]);
+    
+        console.log('chosen', chosen);
+        console.log('options', options);
+    }
+
+    
 }
 
 
