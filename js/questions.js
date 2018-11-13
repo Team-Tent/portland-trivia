@@ -45,6 +45,14 @@ class Round {
         const dom = makeTemplate();
         return dom;
     }
+    getQuestion(currentRound, category) {
+        const roundDifficulty = this.questions[currentRound];
+        console.log(roundDifficulty, 'roundDifficulty');
+        const index = roundDifficulty.findIndex(question => {
+            return question.category === category;
+        });
+        console.log('index', index);
+    }
 }
 
 export default Round;
