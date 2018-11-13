@@ -1,3 +1,8 @@
+//distinguish a different class, Game, that constructs username and score
+//change User class to initiate empty array of scores, and average score
+//highscoreApi init creates a new instance of Game, not User
+//create new instance of User in storeFinalGame method, and use that to push to allGames
+
 class User{
     constructor(username, score){
         this.username = username;
@@ -6,19 +11,6 @@ class User{
 }
 
 const highscoreApi = {
-    // init(username) {
-    //     var user = new User(username, 0);
-    //     var storedUsers = JSON.parse(localStorage.getItem('users'));
-
-    //     if(storedUsers) {
-    //         storedUsers.push(user);
-    //     } else {
-    //         storedUsers = [user];
-    //     }
-
-    //     localStorage.setItem('users', JSON.stringify((storedUsers)));
-    // },
-
     init(username) {
         var user = new User(username, 0);
 
@@ -38,24 +30,27 @@ const highscoreApi = {
         var allGames = JSON.parse(localStorage.getItem('allGames'));
 
         if(allGames) {
-            //if user exists, add score to array of scores and update user's average
-            //else user's average score and array of scores is the current score
             const userIndex = allGames.findIndex(games => {
                 return games.username === game.username;
             });
             var user = allGames[userIndex];
 
-            if(user) {
+            let totalScore = 0;
+            if(user.scores) {
                 user.scores.push(game.score);
+                user.scores.forEach(score => {
+                    totalScore += score;
+                });
             } else {
                 user.scores = [game.score];
             }
+            user.average = totalScore / user.scores.length;
             
             
             
             
             
-            // allGames.push(game);
+            allGames.push(user);
         } else {
             allGames = [game];
         }
