@@ -82,9 +82,10 @@ function populateForm() {
 }
 
 function gameOver() {
+    
     return html`
         <h2>Game Over!</h2>
-        <button>View High Scores</button>
+        <button onclick="window.location='../html/highscore.html'">View High Scores</button>
     `;
 }
 
