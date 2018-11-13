@@ -40,7 +40,6 @@ function getQuestion(roundDifficulty, category) {
             options.push(element);
         }
     });
-    console.log(options, 'options');
 }
 
 
