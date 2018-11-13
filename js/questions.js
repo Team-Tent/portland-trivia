@@ -8,7 +8,7 @@ const questions = questionsApi.getAll();
 
 function makeTemplate() {
     return html`
-        <table>
+        <table id="questionsTable">
             <tr>
                 <th>Landmarks</th>
                 <th>Culture</th>
@@ -63,7 +63,7 @@ function getRandomQuestion(roundDifficulty, category) {
 
 function populateForm() {
     return html `
-        <form id="activeQuestion" class="hidden">
+        <form id="activeQuestion">
             <h2>${selectedQuestion.question}</h2>
             <label for="buttonA"></label>
             <p name="options" id="A">
@@ -82,12 +82,15 @@ function populateForm() {
 }
 
 function gameOver() {
+    const game = highscoreApi.getGame();
+
     const choices = document.querySelectorAll('button[name="choice"]');
     choices.forEach(choice => {
         choice.disabled = true;
     });
     return html`
         <h2>Game Over!</h2>
+        <h3>Your score: ${game.score}</h3>
         <button onclick="window.location='../html/highscore.html'">View High Scores</button>
     `;
 }
@@ -122,6 +125,8 @@ class Round {
                     }
                     if(event.target.id === selectedQuestion.correctAnswer) {
                         highscoreApi.updateScore(score);
+                        const table = document.getElementById('questionsTable');
+                        table.classList.remove('hidden');
                     }
                     else {
                         root.appendChild(gameOver());

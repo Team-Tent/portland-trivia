@@ -25,6 +25,10 @@ const highscoreApi = {
         localStorage.setItem('game', JSON.stringify(game));
     },
 
+    getGame() {
+        return JSON.parse(localStorage.getItem('game'));
+    },
+
     storeFinalGame() {
         const game = JSON.parse(localStorage.getItem('game'));
         var allGames = JSON.parse(localStorage.getItem('allGames'));

@@ -10,6 +10,8 @@ const root = document.getElementById('root');
 root.appendChild(round.render());
 root.addEventListener('click', function(event) {
     if(event.target.name === 'choice') {
+        const table = document.getElementById('questionsTable');
+        table.classList.add('hidden');
         const category = event.target.className;
         round.getQuestion(currentRound, category);
         event.target.disabled = true;
