@@ -9,7 +9,7 @@ root.appendChild(round.render());
 root.addEventListener('click', function(event) {
     const category = event.target.className;
     round.getQuestion(currentRound, category);
-
+    event.target.disabled = true;
     
 
 });

@@ -14,19 +14,19 @@ function makeTemplate() {
                 <th>Social</th>
             </tr>
             <tr>
-                <td class="landmarks">$100</td>
-                <td class="culture">$100</td>
-                <td class="social">$100</td>
+                <td><button class="landmarks">$100</button></td>
+                <td><button class="culture">$100</button></td>
+                <td><button class="social">$100</button></td>
             </tr>
             <tr>
-                <td class="landmarks">$200</td>
-                <td class="culture">$200</td>
-                <td class="social">$200</td>
+                <td><button class="landmarks">$200</button></td>
+                <td><button class="culture">$200</button></td>
+                <td><button class="social">$200</button></td>
             </tr>
             <tr>
-                <td class="landmarks">$300</td>
-                <td class="culture">$300</td>
-                <td class="social">$300</td>
+                <td><button class="landmarks">$300</button></td>
+                <td><button class="culture">$300</button></td>
+                <td><button class="social">$300</button></td>
             </tr>
         </table>
     `;
@@ -58,9 +58,6 @@ function getQuestion(roundDifficulty, category) {
     
 }
 
-
-
-
 class Round {
     constructor(){
         this.questions = questions;
@@ -73,9 +70,9 @@ class Round {
     }
     getQuestion(currentRound, category) {
         const roundDifficulty = this.questions[currentRound];
-        const index = roundDifficulty.findIndex(question => {
-            return question.category === category;
-        });
+        // const index = roundDifficulty.findIndex(question => {
+        //     return question.category === category;
+        // });
         getQuestion(roundDifficulty, category);
     }
 }
