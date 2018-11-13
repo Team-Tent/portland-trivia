@@ -1,7 +1,6 @@
 import highscoreApi from '../api/highscore-api.js';
 import Header from './header.js';
 
-
 const form = document.getElementById('userInfo');
 const headerSection = document.getElementById('header');
 
