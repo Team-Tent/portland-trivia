@@ -1,17 +1,28 @@
 export default [
     [{
-        'question': 'Portland\'s name was decided by a coin toss.  After which city was it almost name?',
-        'category': 'landmarks',
+        'question': 'Portland\'s name was decided by a coin toss.  After which city was it almost named?',
+        'category': 'social',
         'level': 1,
         'answerA': 'Hanover',
         'answerB': 'Syracuse',
         'answerC': 'Manchester',
         'answerD': 'Boston',
         'correctAnswer': 'D',
-        id: 0
+        score: 100
     },
     {
-        'question': 'At what Portland food establishment can you also get married?',
+        'question': 'Portland\'s smallest park comes in at 2.5 feet in diameter.  What\'s its name?',
+        'category': 'landmarks',
+        'level': 2,
+        'answerA': 'Director Park',
+        'answerB': 'Mill Ends Park',
+        'answerC': 'O\'Bryant Square',
+        'answerD': 'Dawson Park',
+        'correctAnswer': 'B',
+        score: 100
+    },
+    {
+        'question': 'At which Portland food establishment can you also get married?',
         'category': 'culture',
         'level': 1,
         'answerA': 'Jake\'s Famous Crawfish Seafood Restaurant',
@@ -19,10 +30,10 @@ export default [
         'answerC': 'Laughing Planet',
         'answerD': 'Portland City Grill',
         'correctAnswer': 'B',
-        id: 1
+        score: 300
     },
     {
-        'question': 'What supernatural TV series was filmed in Portland?',
+        'question': 'Which supernatural TV series was filmed in Portland?',
         'category': 'social',
         'level': 1,
         'answerA': 'Grimm',
@@ -30,7 +41,7 @@ export default [
         'answerC': 'True Blood',
         'answerD': 'Sense8',
         'correctAnswer': 'A',
-        id: 2
+        score: 200
     },
     {
         'question': 'What neighborhood in Portland is at odds with the rectilinear grid followed by the rest of the city?',
@@ -41,7 +52,7 @@ export default [
         'answerC': 'Ladd\'s Addition',
         'answerD': 'Irvington',
         'correctAnswer': 'C',
-        id: 3
+        score: 300
     },
     {
         'question': 'What month long festival each June celebrates bikes?',
@@ -52,7 +63,7 @@ export default [
         'answerC': 'Pedalpalooza',
         'answerD': 'Bike Fest',
         'correctAnswer': 'C',
-        id: 4
+        score: 100
     },   
     {
         'question': 'What NPR host and Portland native occasionally tours with Pink Martini?',
@@ -63,7 +74,7 @@ export default [
         'answerC': 'Ari Shapiro',
         'answerD': 'Terry Gross',
         'correctAnswer': 'C',
-        id: 5
+        score: 300
     },
     {
         'question': 'What extinct volcano lies within the Portland city limits?',
@@ -74,7 +85,7 @@ export default [
         'answerC': 'Powell Butte',
         'answerD': 'Kelly Butte',
         'correctAnswer': 'A',
-        id: 6
+        score: 200
     },
     {
         'question': 'Portland loves its coffee.  Per capita, in which area does it lead the nation?',
@@ -84,17 +95,99 @@ export default [
         'answerB': 'coffee shops',
         'answerC': 'baristas',
         'answerD': 'carts',
-        id: 7
+        score: 200   
+    }],
+
+    [{
+        'question': 'What Portland establishment includes a 21 foot chocolate waterfall?',
+        'category': 'landmarks',
+        'level': 2,
+        'answerA': 'Moonstruck',
+        'answerB': 'Woodblock',
+        'answerC': 'The Candy Basket',
+        'answerD': 'Cacao',
+        'correctAnswer': 'C',
+        score: 400
+    },
+    {
+        'question': 'Since 1912 these water fountains have provided free water to thirsty Portlanders.  They are?',
+        'category': 'landmarks',
+        'level': 3,
+        'answerA': 'Lovejoy Fountains',
+        'answerB': 'Failing Fountains',
+        'answerC': 'Overton Bubblers',
+        'answerD': 'Benson Bubblers',
+        'correctAnswer': 'D',
+        score: 500
+    },
+    {
+        'question': 'The White Stag sign on the Willamette River initially advertised what?',
+        'category': 'landmarks',
+        'level': 2,
+        'answerA': 'sugar',
+        'answerB': 'flour',
+        'answerC': 'salt',
+        'answerD': 'clothing',
+        'correctAnswer': 'A',
+        score: 600
+    },
+    {
+        'question': 'What Portland author won the Hugo, Nebula, Locus and World Fantasy Awards?',
+        'category': 'social',
+        'level': '2',
+        'answerA': 'Jean Auel',
+        'answerB': 'Arthur C. Clarke',
+        'answerC': 'Orson Scott Card',
+        'answerD': 'Ursula LeGuin',
+        'correctAnswer': 'D',
+        score: 700
+    },
+    {
+
     },
     {
         'question': 'What Portland singer competed on the television show "Rock Star Supernova"?',
         'category': 'social',
-        'level': 1,
+        'level': 2,
         'answerA': 'James Mercer',
         'answerB': 'Storm Large',
         'answerC': 'China Forbes',
         'answerD': 'Elliott Smith',
         'correctAnswer': 'B',
-        id: 8
+        score: 500
+    }],
+
+    [{
+        'question': 'The oldest vehicular bridge across the Willamette River is the?',
+        'category': 'landmarks',
+        'level': 3,
+        'answerA': 'Burnside Bridge',
+        'answerB': 'Morrison Bridge',
+        'answerC': 'Hawthorne Bridge',
+        'answerD': 'Sellwood Bridge',
+        'correctAnswer': 'C',
+        score: 700
+    },
+    {
+        'question': 'What statue is Portland is the second largest hammered copper sculpture in the US behind the Statue of Liberty?',
+        'category': 'landmarks',
+        'level': 3,
+        'answerA': 'Portlandia',
+        'answerB': 'Joan of Arc',
+        'answerC': 'Sacajawea and Jean-Baptiste',
+        'answerD': 'The Dream',
+        'correctAnswer': 'A',
+        score: 800
+    },
+    {
+        'question': 'Why do the downtown streets on either side of Burnside come in at different angles?',
+        'category': 'landmarks',
+        'level': 3,
+        'answerA': 'The river curves and the streets are parallel to the river.',
+        'answerB': 'Downtown was platted on magnetic north and the Pearl on true north.',
+        'answerC': 'There was no overall plan for the city.',
+        'answerD': 'Both neighborhoods were already in existence and grew into each other.',
+        'correctAnswer': 'B',
+        score: 900
     }]
 ];
