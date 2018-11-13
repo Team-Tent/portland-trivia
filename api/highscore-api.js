@@ -1,3 +1,8 @@
+//distinguish a different class, Game, that constructs username and score
+//change User class to initiate empty array of scores, and average score
+//highscoreApi init creates a new instance of Game, not User
+//create new instance of User in storeFinalGame method, and use that to push to allGames
+
 class User{
     constructor(username, score){
         this.username = username;
@@ -8,23 +13,50 @@ class User{
 const highscoreApi = {
     init(username) {
         var user = new User(username, 0);
-        var storedUsers = JSON.parse(localStorage.getItem('users'));
 
-        if(storedUsers) {
-            storedUsers.push(user);
-        } else {
-            storedUsers = [user];
-        }
-
-        localStorage.setItem('users', JSON.stringify((storedUsers)));
+        localStorage.setItem('game', JSON.stringify(user));
     },
 
-    updateScore(user, score) {
-        var users = JSON.parse(localStorage.getItem('users'));
+    updateScore(score) {
+        var game = JSON.parse(localStorage.getItem('game'));
 
-        users[user].highscore = score;
+        game.score += score;
 
-        localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('users', JSON.stringify(game));
+    },
+
+    storeFinalGame() {
+        const game = JSON.parse(localStorage.getItem('game'));
+        var allGames = JSON.parse(localStorage.getItem('allGames'));
+
+        if(allGames) {
+            const userIndex = allGames.findIndex(games => {
+                return games.username === game.username;
+            });
+            var user = allGames[userIndex];
+
+            let totalScore = 0;
+            if(user.scores) {
+                user.scores.push(game.score);
+                user.scores.forEach(score => {
+                    totalScore += score;
+                });
+            } else {
+                user.scores = [game.score];
+            }
+            user.average = totalScore / user.scores.length;
+            
+            
+            
+            
+            
+            allGames.push(user);
+        } else {
+            allGames = [game];
+        }
+        console.log(user);
+
+        localStorage.setItem('allGames', JSON.stringify((allGames))); 
     }
 };
 

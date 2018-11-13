@@ -1,0 +1,1 @@
+Shaba is the hipster of all hipsters. She does not conform to the norms of bios.
