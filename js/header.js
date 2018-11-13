@@ -7,9 +7,9 @@ function makeTemplate() {
             <h1>Portland Jeopardy</h1>
         </div>
         <nav>
-            <a href="../index.html"><strong>Home</strong></a>
-            <a href="../html/about.html"><strong>About</strong></a>
-            <a href="../html/highscore.html"><strong>High Scores</strong></a>
+            <a id="home" href="../index.html"><strong>Home</strong></a>
+            <a id="about" href="../html/about.html"><strong>About</strong></a>
+            <a id="highscores" href="../html/highscore.html"><strong>High Scores</strong></a>
         </nav>
     `;
 }
