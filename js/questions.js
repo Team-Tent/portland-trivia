@@ -1,7 +1,7 @@
 import questionsApi from '../api/questions-api.js';
 import html from './html.js';
 import highscoreApi from '../api/highscore-api.js';
-
+import Score from '../js/score.js';
 
 
 const questions = questionsApi.getAll();
@@ -83,8 +83,11 @@ function populateForm() {
 
 function gameOver() {
     const game = highscoreApi.getGame();
-
+    const scoreDisplay = document.getElementById('scoreDisplay');
     const choices = document.querySelectorAll('button[name="choice"]');
+
+    scoreDisplay.innerHTML = '';
+
     choices.forEach(choice => {
         choice.disabled = true;
     });
@@ -112,20 +115,24 @@ class Round {
         const form = document.getElementById('activeQuestion');
         if(form){
         
-            form.addEventListener('click', event => {
-                event.preventDefault();
-            });
+            // form.addEventListener('click', event => {
+            //     event.preventDefault();
+            // });
             const options = document.querySelectorAll('p');
             options.forEach(option => {
                 option.addEventListener('click', event => {
                     const root = document.getElementById('root');
                     let rootLength = root.childNodes.length - 1;
-                    for(let i = rootLength; i > 3; i--) {
+                    for(let i = rootLength; i > 6; i--) {
                         root.removeChild(root.lastChild);
                     }
+                    console.log(root.childNodes);
                     if(event.target.id === selectedQuestion.correctAnswer) {
                         highscoreApi.updateScore(score);
+                        const currentScore = new Score;
+                        currentScore.update();
                         const table = document.getElementById('questionsTable');
+                        console.log(table);
                         table.classList.remove('hidden');
                     }
                     else {
