@@ -7,5 +7,6 @@ form.addEventListener('submit', event => {
     const username = event.target.elements.username.value;
     
     highscoreApi.init(username);
-    window.location = 'html/game.html';
+    window.location = 'html/game.html';  
+    highscoreApi.storeFinalGame();
 });
