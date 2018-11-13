@@ -32,8 +32,12 @@ function makeTemplate() {
         </table>
     `;
 }
+
 let chosen = [];
 let selectedQuestion = {};
+const root = document.getElementById('root');
+
+
 function getRandomQuestion(roundDifficulty, category) {
     let options = [];
     
@@ -52,7 +56,6 @@ function getRandomQuestion(roundDifficulty, category) {
         
         selectedQuestion = options[index];
         chosen.push(selectedQuestion);
-        const root = document.getElementById('root');
         const dom = populateForm();
         root.appendChild(dom);
     }
@@ -77,6 +80,14 @@ function populateForm() {
         </form>
     `;
 }
+
+function gameOver() {
+    return html`
+        <h2>Game Over!</h2>
+        <button>View High Scores</button>
+    `;
+}
+
 
 class Round {
     constructor(){
@@ -107,15 +118,9 @@ class Round {
                     }
                     if(event.target.id === selectedQuestion.correctAnswer) {
                         highscoreApi.updateScore(score);
-                        
-                        
-                        // you click correct answer
-                        // add points of this question, to total points
-                        // bring back to game
                     }
                     else {
-                        // you clicked the wrong answer
-                        // game over
+                        root.appendChild(gameOver());
                     }
                 });
             });
