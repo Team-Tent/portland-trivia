@@ -1,5 +1,6 @@
 import questionsApi from '../api/questions-api.js';
 import html from './html.js';
+import highscoreApi from '../api/highscore-api.js';
 
 
 
@@ -32,7 +33,7 @@ function makeTemplate() {
     `;
 }
 let chosen = [];
-
+let selectedQuestion = {};
 function getRandomQuestion(roundDifficulty, category) {
     let options = [];
     
@@ -49,37 +50,29 @@ function getRandomQuestion(roundDifficulty, category) {
             index = Math.floor(Math.random() * options.length);
         }
         
-        const selectedQuestion = options[index];
+        selectedQuestion = options[index];
         chosen.push(selectedQuestion);
         const root = document.getElementById('root');
-        const dom = populateForm(selectedQuestion);
-        // root.removeChild(root.childNodes[5]);
+        const dom = populateForm();
         root.appendChild(dom);
-        console.log(root.childNodes[5]);
-        // const form = dom.getElementById('activeQuestion');
-        // console.log(dom);
-        // form.addEventListener('submit', () => {
-        //     console.log('answered');
-        // });
-
     }
 }
 
-function populateForm(selectedQuestion) {
+function populateForm() {
     return html `
         <form id="activeQuestion" class="hidden">
             <h2>${selectedQuestion.question}</h2>
             <label for="buttonA"></label>
-            <p name="options" id="buttonA" value="answerA">
+            <p name="options" id="A">
             ${selectedQuestion.answerA}</p>
             <label for="buttonB"></label>
-            <p name="options" id="buttonB" value="answerB">
+            <p name="options" id="B">
             ${selectedQuestion.answerB}</p>            
             <label for="buttonC"></label>
-            <p name="options" id="buttonC" value="answerC">
+            <p name="options" id="C">
             ${selectedQuestion.answerC}</p>
             <label for="buttonD"></label>
-            <p name="options" id="buttonD" value="answerD">
+            <p name="options" id="D">
             ${selectedQuestion.answerD}</p>
         </form>
     `;
@@ -87,9 +80,7 @@ function populateForm(selectedQuestion) {
 
 class Round {
     constructor(){
-        this.questions = questions;
-        
-        // call get random function for easy, medium and hard
+        this.questions = questions;   
     }
     render() {
         const dom = makeTemplate();
@@ -98,6 +89,35 @@ class Round {
     getQuestion(currentRound, category) {
         const roundDifficulty = this.questions[currentRound];
         getRandomQuestion(roundDifficulty, category);
+    }
+    checkAnswer() {
+        const form = document.getElementById('activeQuestion');
+        if(form){
+        
+            form.addEventListener('click', event => {
+                event.preventDefault();
+            });
+            const options = document.querySelectorAll('p');
+            options.forEach(option => {
+                option.addEventListener('click', event => {
+                    const root = document.getElementById('root');
+                    let rootLength = root.childNodes.length - 1;
+                    for(let i = rootLength; i > 3; i--) {
+                        root.removeChild(root.lastChild);
+                    }
+                    
+                    if(event.target.id === selectedQuestion.correctAnswer) {
+                        // you click correct answer
+                        // add points of this question, to total points
+                        // bring back to game
+                    }
+                    else {
+                        // you clicked the wrong answer
+                        // game over
+                    }
+                });
+            });
+        }
     }
 }
 
