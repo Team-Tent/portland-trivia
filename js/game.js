@@ -1,7 +1,5 @@
-import highscoreApi from '../api/highscore-api.js';
+// import highscoreApi from '../api/highscore-api.js';
 import Round from '../js/questions.js';
-import html from '../js/html.js';
-
 let currentRound = 0;
 
 

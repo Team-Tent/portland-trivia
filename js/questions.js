@@ -32,6 +32,16 @@ function makeTemplate() {
     `;
 }
 
+function getQuestion(roundDifficulty, category) {
+    let options = [];
+    roundDifficulty.forEach(element => {
+        if(element.category === category) {
+            options.push(element);
+        }
+    });
+    console.log(options, 'options');
+}
+
 
 
 
@@ -47,11 +57,10 @@ class Round {
     }
     getQuestion(currentRound, category) {
         const roundDifficulty = this.questions[currentRound];
-        console.log(roundDifficulty, 'roundDifficulty');
         const index = roundDifficulty.findIndex(question => {
             return question.category === category;
         });
-        console.log('index', index);
+        getQuestion(roundDifficulty, category);
     }
 }
 
