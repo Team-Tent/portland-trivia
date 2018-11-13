@@ -53,7 +53,9 @@ function getRandomQuestion(roundDifficulty, category) {
         chosen.push(selectedQuestion);
         const root = document.getElementById('root');
         const dom = populateForm(selectedQuestion);
+        // root.removeChild(root.childNodes[5]);
         root.appendChild(dom);
+        console.log(root.childNodes[5]);
         // const form = dom.getElementById('activeQuestion');
         // console.log(dom);
         // form.addEventListener('submit', () => {
@@ -66,19 +68,19 @@ function getRandomQuestion(roundDifficulty, category) {
 function populateForm(selectedQuestion) {
     return html `
         <form id="activeQuestion" class="hidden">
-            <p><strong>${selectedQuestion.question}</strong></p>
+            <h2>${selectedQuestion.question}</h2>
             <label for="buttonA"></label>
-            <p id="buttonA" value="answerA"></p>
-            ${selectedQuestion.answerA}
+            <p name="options" id="buttonA" value="answerA">
+            ${selectedQuestion.answerA}</p>
             <label for="buttonB"></label>
-            <p id="buttonB" value="answerB"></p>
-            ${selectedQuestion.answerB}            
+            <p name="options" id="buttonB" value="answerB">
+            ${selectedQuestion.answerB}</p>            
             <label for="buttonC"></label>
-            <p id="buttonC" value="answerC"></p>
-            ${selectedQuestion.answerC}
+            <p name="options" id="buttonC" value="answerC">
+            ${selectedQuestion.answerC}</p>
             <label for="buttonD"></label>
-            <p id="buttonD" value="answerD"></p>
-            ${selectedQuestion.answerD}
+            <p name="options" id="buttonD" value="answerD">
+            ${selectedQuestion.answerD}</p>
         </form>
     `;
 }
