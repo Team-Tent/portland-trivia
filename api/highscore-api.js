@@ -1,3 +1,5 @@
+// var username;
+
 class Game {
     constructor(username) {
         this.username = username;
@@ -15,8 +17,8 @@ class User {
 
 const highscoreApi = {
     init(username) {
-        this.username = username;
-        var game = new Game(this.username);
+        // username = name;
+        var game = new Game(username);
 
         localStorage.setItem('game', JSON.stringify(game));
     },
@@ -33,34 +35,38 @@ const highscoreApi = {
         return JSON.parse(localStorage.getItem('game'));
     },
 
-    storeFinalGame() {
+    storeFinalGame(username) {
         const game = JSON.parse(localStorage.getItem('game'));
         var allGames = JSON.parse(localStorage.getItem('allGames'));
+        var user;
 
         if(allGames) {
             const userIndex = allGames.findIndex(games => {
                 return games.username === game.username;
             });
 
-            if(userIndex) {
-                this.user = allGames[userIndex];
+            console.log(userIndex);
+
+            if(userIndex >= 0) {
+                user = allGames[userIndex];
+                allGames.splice(userIndex, 1);
             } else {
-                this.user = new User(this.username);
+                user = new User(username);
             }
         } else {
-            this.user = new User(this.username);
+            user = new User(username);
             allGames = [];
         }
 
-        this.user.scores.push(game.score);
+        user.scores.push(game.score);
 
         let totalScore = 0;
-        this.user.scores.forEach(score => {
+        user.scores.forEach(score => {
             totalScore += score;
         });
-        this.user.average = totalScore / this.user.scores.length;
+        user.average = totalScore / user.scores.length;
 
-        allGames.push(this.user);
+        allGames.push(user);
 
         localStorage.setItem('allGames', JSON.stringify((allGames)));
     }

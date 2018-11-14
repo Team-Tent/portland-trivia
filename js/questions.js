@@ -103,6 +103,8 @@ function gameOver(win) {
     choices.forEach(choice => {
         choice.disabled = true;
     });
+
+    highscoreApi.storeFinalGame(highscoreApi.getGame().username);
     return html`
         <h2>${message}</h2>
         <h3>Your score: ${game.score}</h3>
