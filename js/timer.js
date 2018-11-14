@@ -1,9 +1,10 @@
-let count = 5;
+let count = 30;
 var interval;
+var timer;
 
 function startTimer() {
     count--;
-    console.log(count);
+    timer.innerHTML = `Timer: ${count}`;
     stopTimer();
 }
 
@@ -15,11 +16,10 @@ function stopTimer() {
 
 class Timer {
     constructor() {
-        this.time = 30;
+        timer = document.getElementById('timer');
+        timer.innerHTML = `Timer: ${count}`;
     }
-    updateTimer() {
-        const timer = document.getElementById('timer');
-        timer.innerHTML = `Timer: ${this.time}`;
+    updateTimer() {       
         interval = setInterval(startTimer, 1000);
     }
 }
