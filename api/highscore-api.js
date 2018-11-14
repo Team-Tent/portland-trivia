@@ -45,8 +45,6 @@ const highscoreApi = {
                 return games.username === game.username;
             });
 
-            console.log(userIndex);
-
             if(userIndex >= 0) {
                 user = allGames[userIndex];
                 allGames.splice(userIndex, 1);
@@ -65,6 +63,7 @@ const highscoreApi = {
             totalScore += score;
         });
         user.average = totalScore / user.scores.length;
+        user.highscore = Math.max(...user.scores);
 
         allGames.push(user);
 
