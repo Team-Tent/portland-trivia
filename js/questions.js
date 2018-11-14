@@ -6,6 +6,10 @@ import Timer from '../js/timer.js';
 
 
 const questions = questionsApi.getAll();
+let chosen = [];
+let selectedQuestion = {};
+const root = document.getElementById('root');
+var timer;
 
 function makeTemplate() {
     return html`
@@ -34,14 +38,10 @@ function makeTemplate() {
     `;
 }
 
-let chosen = [];
-let selectedQuestion = {};
-const root = document.getElementById('root');
-var timer;
-
 
 function getRandomQuestion(roundDifficulty, category) {
     let options = [];
+    console.log(chosen.length);
     
     if(chosen.length < 9) {
         roundDifficulty.forEach(element => {
@@ -116,6 +116,9 @@ class Round {
     getQuestion(currentRound, category) {
         const roundDifficulty = this.questions[currentRound];
         getRandomQuestion(roundDifficulty, category);
+    }
+    getChosen() {
+        return chosen;
     }
     checkAnswer(score) {
         const form = document.getElementById('activeQuestion');

@@ -10,6 +10,7 @@ let currentRound = 0;
 
 const round = new Round;
 const root = document.getElementById('root');
+let chosen = round.getChosen();
 
 const score = new Score;
 root.appendChild(score.render());
@@ -22,5 +23,13 @@ root.addEventListener('click', function(event) {
         round.getQuestion(currentRound, category);
         event.target.disabled = true;
         round.checkAnswer(parseInt(event.target.value));
+
+        if(chosen.length % 9 === 0) {
+            console.log('finished');
+            // undisable all buttons
+            // increment round
+            // display level on screen
+            // if chosen length is 27, display you win
+        }
     }
 });
