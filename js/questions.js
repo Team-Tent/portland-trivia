@@ -61,9 +61,6 @@ function getRandomQuestion(roundDifficulty, category) {
         timer = new Timer;
         timer.updateTimer();
     }
-    // else {
-    //     root.appendChild(gameOver(true));
-    // }
 }
 
 function populateForm() {

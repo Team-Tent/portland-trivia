@@ -16,9 +16,9 @@ function stopTimer() {
 
 class Timer {
     constructor() {
-        count = 30;
+        count = 29;
         timer = document.getElementById('timer');
-        timer.innerHTML = `Timer: ${count}`;
+        timer.innerHTML = `Timer: ${30}`;
     }
     updateTimer() {       
         interval = setInterval(startTimer, 1000);
