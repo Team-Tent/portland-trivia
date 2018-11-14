@@ -1,26 +1,31 @@
-let count = 30;
+let count;
 var interval;
 var timer;
 
 function startTimer() {
-    count--;
     timer.innerHTML = `Timer: ${count}`;
-    stopTimer();
+    count--;
+    if(count < 1) {
+        stopTimer();
+    }
 }
 
 function stopTimer() {
-    if(count < 1) {
-        clearInterval(interval);
-    }
+    clearInterval(interval);
 }
 
 class Timer {
     constructor() {
+        count = 30;
         timer = document.getElementById('timer');
         timer.innerHTML = `Timer: ${count}`;
     }
     updateTimer() {       
         interval = setInterval(startTimer, 1000);
+    }
+    resetTimer() {
+        stopTimer();
+        count = 30;
     }
 }
 

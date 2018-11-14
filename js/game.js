@@ -1,3 +1,6 @@
+// store game in allGames after game over
+
+
 // import highscoreApi from '../api/highscore-api.js';
 import Round from '../js/questions.js';
 import Score from '../js/score.js';
