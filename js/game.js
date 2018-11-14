@@ -1,7 +1,6 @@
 // store game in allGames after game over
 
 
-// import highscoreApi from '../api/highscore-api.js';
 import Round from './questions.js';
 import Score from './score.js';
 import Level from './level.js';
@@ -35,7 +34,6 @@ root.addEventListener('click', function(event) {
             });
             currentRound++;
             level.getRound(currentRound + 1);
-            // display level on screen
         }
     }
 });

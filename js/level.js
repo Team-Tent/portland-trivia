@@ -1,4 +1,3 @@
-import highscoreApi from '../api/highscore-api.js';
 import html from '../js/html.js';
 
 var round = 1;

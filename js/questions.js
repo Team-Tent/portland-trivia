@@ -91,6 +91,7 @@ function populateForm() {
 function gameOver(win) {
     const game = highscoreApi.getGame();
     const scoreDisplay = document.getElementById('scoreDisplay');
+    const levelDisplay = document.getElementById('levelDisplay');
     const choices = document.querySelectorAll('button[name="choice"]');
     var message = '';
     if(win) {
@@ -100,6 +101,7 @@ function gameOver(win) {
         message = 'Game over!';
     }
     scoreDisplay.innerHTML = '';
+    levelDisplay.innerHTML = '';
 
     choices.forEach(choice => {
         choice.disabled = true;
