@@ -43,7 +43,7 @@ function getRandomQuestion(roundDifficulty, category) {
     let options = [];
     console.log(chosen.length);
     
-    if(chosen.length < 9) {
+    if(chosen.length < 27) {
         roundDifficulty.forEach(element => {
             if(element.category === category && !chosen.includes(element)) {
                 options.push(element);
@@ -52,7 +52,7 @@ function getRandomQuestion(roundDifficulty, category) {
         
         let index = Math.floor(Math.random() * options.length);
         
-        while(chosen.includes(options[index]) && chosen.length < 9) {
+        while(chosen.includes(options[index]) && chosen.length < 27) {
             index = Math.floor(Math.random() * options.length);
         }
         

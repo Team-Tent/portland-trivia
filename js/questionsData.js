@@ -192,7 +192,7 @@ export default [
         'correctAnswer': 'C',
     },
     {
-        'question': 'What statue is Portland is the second largest hammered copper sculpture in the US behind the Statue of Liberty?',
+        'question': 'What statue in Portland is the second largest hammered copper sculpture in the US behind the Statue of Liberty?',
         'category': 'landmarks',
         'level': 3,
         'answerA': 'Portlandia',
@@ -252,7 +252,7 @@ export default [
         'correctAnswer': 'C'
     },
     {
-        'question': 'Which Portland author\'s novel about hiking the Pacific Crest Trail was made into a movie starring Reese Witherspoon',
+        'question': 'Which Portland author\'s novel about hiking the Pacific Crest Trail was made into a movie starring Reese Witherspoon?',
         'category': 'social',
         'level': 3,
         'answerA': 'Richard Meltzer',
@@ -262,7 +262,7 @@ export default [
         'correctAnswer': 'D'
     },
     {
-        'question': 'An international knitting conference focused on ________ attracted over 6000 participants to Portland in 2009 and again in 2011.',
+        'question': 'An international knitting conference focused on ________ attracted over 6000 participants to Portland in 2009 and again in 2011?',
         'category': 'social',
         'level': 3,
         'answerA': 'sweaters',
