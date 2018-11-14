@@ -8,7 +8,6 @@ export default [
         'answerC': 'Manchester',
         'answerD': 'Boston',
         'correctAnswer': 'D',
-        score: 100
     },
     {
         'question': 'Portland\'s smallest park comes in at 2.5 feet in diameter.  What\'s its name?',
@@ -19,7 +18,6 @@ export default [
         'answerC': 'O\'Bryant Square',
         'answerD': 'Dawson Park',
         'correctAnswer': 'B',
-        score: 100
     },
     {
         'question': 'At which Portland food establishment can you also get married?',
@@ -30,7 +28,6 @@ export default [
         'answerC': 'Laughing Planet',
         'answerD': 'Portland City Grill',
         'correctAnswer': 'B',
-        score: 300
     },
     {
         'question': 'Which supernatural TV series was filmed in Portland?',
@@ -41,7 +38,6 @@ export default [
         'answerC': 'True Blood',
         'answerD': 'Sense8',
         'correctAnswer': 'A',
-        score: 200
     },
     {
         'question': 'What neighborhood in Portland is at odds with the rectilinear grid followed by the rest of the city?',
@@ -52,7 +48,6 @@ export default [
         'answerC': 'Ladd\'s Addition',
         'answerD': 'Irvington',
         'correctAnswer': 'C',
-        score: 300
     },
     {
         'question': 'What month long festival each June celebrates bikes?',
@@ -63,7 +58,6 @@ export default [
         'answerC': 'Pedalpalooza',
         'answerD': 'Bike Fest',
         'correctAnswer': 'C',
-        score: 100
     },   
     {
         'question': 'What NPR host and Portland native occasionally tours with Pink Martini?',
@@ -74,7 +68,6 @@ export default [
         'answerC': 'Ari Shapiro',
         'answerD': 'Terry Gross',
         'correctAnswer': 'C',
-        score: 300
     },
     {
         'question': 'What extinct volcano lies within the Portland city limits?',
@@ -85,7 +78,6 @@ export default [
         'answerC': 'Powell Butte',
         'answerD': 'Kelly Butte',
         'correctAnswer': 'A',
-        score: 200
     },
     {
         'question': 'Portland loves its coffee.  Per capita, in which area does it lead the nation?',
@@ -95,9 +87,9 @@ export default [
         'answerB': 'coffee shops',
         'answerC': 'baristas',
         'answerD': 'carts',
-        score: 200   
+        'correctAnswer': 'A'
     }],
-
+// Level 2
     [{
         'question': 'What Portland establishment includes a 21 foot chocolate waterfall?',
         'category': 'landmarks',
@@ -107,7 +99,6 @@ export default [
         'answerC': 'The Candy Basket',
         'answerD': 'Cacao',
         'correctAnswer': 'C',
-        score: 400
     },
     {
         'question': 'Since 1912 these water fountains have provided free water to thirsty Portlanders.  They are?',
@@ -118,18 +109,16 @@ export default [
         'answerC': 'Overton Bubblers',
         'answerD': 'Benson Bubblers',
         'correctAnswer': 'D',
-        score: 500
     },
     {
         'question': 'The White Stag sign on the Willamette River initially advertised what?',
         'category': 'landmarks',
         'level': 2,
         'answerA': 'sugar',
-        'answerB': 'flour',
+        'answerB': 'beer',
         'answerC': 'salt',
         'answerD': 'clothing',
         'correctAnswer': 'A',
-        score: 600
     },
     {
         'question': 'What Portland author won the Hugo, Nebula, Locus and World Fantasy Awards?',
@@ -140,10 +129,16 @@ export default [
         'answerC': 'Orson Scott Card',
         'answerD': 'Ursula LeGuin',
         'correctAnswer': 'D',
-        score: 700
     },
     {
-
+        'question': 'Portlander Ward Cunningham developed ______ in 1995 leading ______ to celebrate it\'s 10 year anniversary here.',
+        'category': 'social',
+        'level': '2',
+        'answerA': 'the wiki, Wikipedia',
+        'answerB': 'microbrewing, Craft Brewing Council',
+        'answerC': 'the WWW, Google',
+        'answerD': 'lasik, FDA Division of Opthalmic Devices',
+        'correctAnswer': 'A'
     },
     {
         'question': 'What Portland singer competed on the television show "Rock Star Supernova"?',
@@ -152,11 +147,40 @@ export default [
         'answerA': 'James Mercer',
         'answerB': 'Storm Large',
         'answerC': 'China Forbes',
-        'answerD': 'Elliott Smith',
+        'answerD': 'Art Alexakis',
         'correctAnswer': 'B',
-        score: 500
+    },
+    {
+        'question': 'Portland has more of these, per capita than any other city in the US.',
+        'category': 'culture',
+        'level': 2,
+        'answerA': 'tall bikes and scooters',
+        'answerB': 'strip clubs and microbreweries',
+        'answerC': 'coffee shops and bookstores',
+        'answerD': 'yarn stores and brew pubs',
+        'correctAnswer': 'B'
+    },
+    {
+        'question': 'Every year Mt. Tabor is the location for what competition?',
+        'category': 'culture',
+        'level': 2,
+        'answerA': 'hula hoop',
+        'answerB': 'yoga',
+        'answerC': 'soapbox derby',
+        'answerD': 'pogo stick',
+        'correctAnswer': 'C' 
+    },
+    {
+        'question': 'What Portland bike ride attracts upwards of 10,000 participants?',
+        'category': 'culture',
+        'level': 2,
+        'answerA': 'Starlight Ride',
+        'answerB': 'Tall Bike Gathering',
+        'answerC': 'Worst Day of the Year Ride',
+        'answerD': 'World Naked Bike Ride',
+        'correctAnswer': 'D'
     }],
-
+// Level 3
     [{
         'question': 'The oldest vehicular bridge across the Willamette River is the?',
         'category': 'landmarks',
@@ -166,7 +190,6 @@ export default [
         'answerC': 'Hawthorne Bridge',
         'answerD': 'Sellwood Bridge',
         'correctAnswer': 'C',
-        score: 700
     },
     {
         'question': 'What statue is Portland is the second largest hammered copper sculpture in the US behind the Statue of Liberty?',
@@ -177,7 +200,6 @@ export default [
         'answerC': 'Sacajawea and Jean-Baptiste',
         'answerD': 'The Dream',
         'correctAnswer': 'A',
-        score: 800
     },
     {
         'question': 'Why do the downtown streets on either side of Burnside come in at different angles?',
@@ -186,8 +208,67 @@ export default [
         'answerA': 'The river curves and the streets are parallel to the river.',
         'answerB': 'Downtown was platted on magnetic north and the Pearl on true north.',
         'answerC': 'There was no overall plan for the city.',
-        'answerD': 'Both neighborhoods were already in existence and grew into each other.',
+        'answerD': 'One of the survey crews got its baseline wrong and the mistake was discovered too late.',
         'correctAnswer': 'B',
-        score: 900
+    },
+    {
+        'question': 'What rum drink was created in Portland in 1944 by Vic Bergeron?',
+        'category': 'culture',
+        'level': 3,
+        'answerA': 'Hurricane',
+        'answerB': 'Mai Tai',
+        'answerC': 'Dark & Stormy',
+        'answerD': 'Cable Car',
+        'correctAnswer': 'B'
+    },
+    {
+        'question': 'Where in Portland can you ride a 5/8 scale narrow gauge railroad?',
+        'category': 'culture',
+        'level': 3,
+        'answerA': 'Oaks Park',
+        'answerB': 'Willamette Short Trolley',
+        'answerC': 'Oregon Pacific Railroad',
+        'answerD': 'Oregon Zoo',
+        'correctAnswer': 'D'
+    },
+    {
+        'question': 'Who can be spotted riding around Portland on a unicycle while playing bagpipes and wearing a Darth Vader mask?',
+        'category': 'culture',
+        'level': 3,
+        'answerA': 'the Unipiper',
+        'answerB': 'Darth Piper',
+        'answerC': 'McVader',
+        'answerD': 'Scotty',
+        'correctAnswer': 'A'
+    },
+    {
+        'question': 'What Portland church was founded in opposition to a Kansas decision to teach intelligent design',
+        'category': 'social',
+        'level': 3,
+        'answerA': 'Church of Elvis',
+        'answerB': 'Church of Raëlism',
+        'answerC': 'Church of the Flying Spaghetti Monster',
+        'answerD': 'Seventh Day Bicyclists',
+        'correctAnswer': 'C'
+    },
+    {
+        'question': 'Which Portland author\'s novel about hiking the Pacific Crest Trail was made into a movie starring Reese Witherspoon',
+        'category': 'social',
+        'level': 3,
+        'answerA': 'Richard Meltzer',
+        'answerB': 'April Henry',
+        'answerC': 'Terence O\'Donnell',
+        'answerD': 'Cheryl Strayed',
+        'correctAnswer': 'D'
+    },
+    {
+        'question': 'An international knitting conference focused on ________ attracted over 6000 participants to Portland in 2009 and again in 2011.',
+        'category': 'social',
+        'level': 3,
+        'answerA': 'sweaters',
+        'answerB': 'socks',
+        'answerC': 'scarves',
+        'answerD': 'hats',
+        'correctAnswer': 'B'
     }]
 ];
