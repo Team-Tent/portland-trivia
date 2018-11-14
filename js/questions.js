@@ -2,6 +2,7 @@ import questionsApi from '../api/questions-api.js';
 import html from './html.js';
 import highscoreApi from '../api/highscore-api.js';
 import Score from '../js/score.js';
+import Timer from '../js/timer.js';
 
 
 const questions = questionsApi.getAll();
@@ -58,12 +59,16 @@ function getRandomQuestion(roundDifficulty, category) {
         chosen.push(selectedQuestion);
         const dom = populateForm();
         root.appendChild(dom);
+        const timer = new Timer;
+        timer.updateTimer();
     }
 }
 
 function populateForm() {
+
     return html `
         <form id="activeQuestion">
+            <h2 id="timer"></h2>
             <h2>${selectedQuestion.question}</h2>
             <label for="buttonA"></label>
             <p name="options" id="A">
