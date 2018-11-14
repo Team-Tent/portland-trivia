@@ -1,5 +1,3 @@
-// var username;
-
 class Game {
     constructor(username) {
         this.username = username;
@@ -17,7 +15,6 @@ class User {
 
 const highscoreApi = {
     init(username) {
-        // username = name;
         var game = new Game(username);
 
         localStorage.setItem('game', JSON.stringify(game));
@@ -68,6 +65,29 @@ const highscoreApi = {
         allGames.push(user);
 
         localStorage.setItem('allGames', JSON.stringify((allGames)));
+        this.updateCollective();
+    },
+
+    updateCollective() {
+        const allGames = JSON.parse(localStorage.getItem('allGames'));
+        var collective = {};
+        var highscores = [];
+        var averages = [];
+        var totalAvg = 0;
+
+        allGames.forEach(game => {
+            highscores.push(game.highscore);
+            averages.push(game.average);
+        });
+
+        averages.forEach(avg => {
+            totalAvg += avg;
+        });
+
+        collective.collHigh = Math.max(...highscores);
+        collective.collAvg = totalAvg / averages.length;
+
+        localStorage.setItem('collective', JSON.stringify(collective));
     }
 };
 
