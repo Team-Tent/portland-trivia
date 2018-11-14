@@ -41,8 +41,6 @@ function makeTemplate() {
 
 function getRandomQuestion(roundDifficulty, category) {
     let options = [];
-    console.log(chosen.length);
-    
     if(chosen.length < 27) {
         roundDifficulty.forEach(element => {
             if(element.category === category && !chosen.includes(element)) {
@@ -63,6 +61,9 @@ function getRandomQuestion(roundDifficulty, category) {
         timer = new Timer;
         timer.updateTimer();
     }
+    // else {
+    //     root.appendChild(gameOver(true));
+    // }
 }
 
 function populateForm() {
@@ -87,18 +88,24 @@ function populateForm() {
     `;
 }
 
-function gameOver() {
+function gameOver(win) {
     const game = highscoreApi.getGame();
     const scoreDisplay = document.getElementById('scoreDisplay');
     const choices = document.querySelectorAll('button[name="choice"]');
-
+    var message = '';
+    if(win) {
+        message = 'You\'re a true Portlander! You win!';
+    }
+    else {
+        message = 'Game over!';
+    }
     scoreDisplay.innerHTML = '';
 
     choices.forEach(choice => {
         choice.disabled = true;
     });
     return html`
-        <h2>Game Over!</h2>
+        <h2>${message}</h2>
         <h3>Your score: ${game.score}</h3>
         <button onclick="window.location='highscore.html'">View High Scores</button>
     `;
@@ -138,13 +145,20 @@ class Round {
                         currentScore.update();
                         const table = document.getElementById('questionsTable');
                         table.classList.remove('hidden');
+                        if(chosen.length === 27) {
+                            table.classList.add('hidden');
+                            root.appendChild(gameOver(true));
+                        }
                     }
                     else {
-                        root.appendChild(gameOver());
+                        root.appendChild(gameOver(false));
                     }
                 });
             });
         }
+    }
+    endGame(win) {
+        root.appendChild(gameOver(win));
     }
 }
 

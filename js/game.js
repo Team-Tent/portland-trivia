@@ -26,14 +26,11 @@ root.addEventListener('click', function(event) {
 
         if(chosen.length % 9 === 0) {
             const buttons = document.querySelectorAll('button[name="choice"]');
-            console.log(buttons);
             buttons.forEach(button => {
                 button.disabled = false;
             });
             currentRound++;
-            // round.getQuestion(currentRound, category);
             // display level on screen
-            // if chosen length is 27, display you win
         }
     }
 });

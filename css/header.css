@@ -21,9 +21,16 @@ a {
 nav a {
     color: white;
 }
+nav {
+    display: 
+}
 
 .logo {
     height: 75px;
     margin-right: 15px;
 } 
+h1 {
+    width: 10vw;
+    margin: 0;
+}
 
