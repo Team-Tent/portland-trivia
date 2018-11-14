@@ -3,7 +3,7 @@ import html from './html.js';
 function makeTemplate() {
     return html`
         <div>
-            <img class="logo" src="../assets/tent-drawing-cartoon-3.png">
+            <img class="logo" src="assets/tent-drawing-cartoon-3.png">
             <h1>Portland Jeopardy</h1>
         </div>
         <nav>
