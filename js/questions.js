@@ -1,9 +1,9 @@
 import questionsApi from '../api/questions-api.js';
 import html from './html.js';
 import highscoreApi from '../api/highscore-api.js';
-import Score from '../js/score.js';
-import Timer from '../js/timer.js';
-
+import Score from './score.js';
+import Timer from './timer.js';
+import Level from './level.js';
 
 const questions = questionsApi.getAll();
 let chosen = [];
@@ -136,7 +136,7 @@ class Round {
                     const root = document.getElementById('root');
                     let rootLength = root.childNodes.length - 1;
                     timer.resetTimer();
-                    for(let i = rootLength; i > 6; i--) {
+                    for(let i = rootLength; i > 9; i--) {
                         root.removeChild(root.lastChild);
                     }
                     if(event.target.id === selectedQuestion.correctAnswer) {
@@ -145,6 +145,8 @@ class Round {
                         currentScore.update();
                         const table = document.getElementById('questionsTable');
                         table.classList.remove('hidden');
+                        const level = new Level;
+                        level.update();
                         if(chosen.length === 27) {
                             table.classList.add('hidden');
                             root.appendChild(gameOver(true));

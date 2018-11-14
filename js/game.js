@@ -2,8 +2,9 @@
 
 
 // import highscoreApi from '../api/highscore-api.js';
-import Round from '../js/questions.js';
-import Score from '../js/score.js';
+import Round from './questions.js';
+import Score from './score.js';
+import Level from './level.js';
 
 let currentRound = 0;
 
@@ -11,6 +12,9 @@ let currentRound = 0;
 const round = new Round;
 const root = document.getElementById('root');
 let chosen = round.getChosen();
+
+const level = new Level(currentRound + 1);
+root.appendChild(level.render());
 
 const score = new Score;
 root.appendChild(score.render());
@@ -30,6 +34,7 @@ root.addEventListener('click', function(event) {
                 button.disabled = false;
             });
             currentRound++;
+            level.getRound(currentRound + 1);
             // display level on screen
         }
     }
