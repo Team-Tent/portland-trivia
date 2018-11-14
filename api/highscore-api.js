@@ -1,20 +1,24 @@
-//distinguish a different class, Game, that constructs username and score
-//change User class to initiate empty array of scores, and average score
-//highscoreApi init creates a new instance of Game, not User
-//create new instance of User in storeFinalGame method, and use that to push to allGames
-
-class User{
-    constructor(username, score){
+class Game {
+    constructor(username) {
         this.username = username;
-        this.score = score;
+        this.score = 0;
+    }
+}
+
+class User {
+    constructor(username) {
+        this.username = username;
+        this.scores = [];
+        this.average = 0;
     }
 }
 
 const highscoreApi = {
     init(username) {
-        var user = new User(username, 0);
+        this.username = username;
+        var game = new Game(this.username);
 
-        localStorage.setItem('game', JSON.stringify(user));
+        localStorage.setItem('game', JSON.stringify(game));
     },
 
     updateScore(score) {
@@ -37,30 +41,28 @@ const highscoreApi = {
             const userIndex = allGames.findIndex(games => {
                 return games.username === game.username;
             });
-            var user = allGames[userIndex];
 
-            let totalScore = 0;
-            if(user.scores) {
-                user.scores.push(game.score);
-                user.scores.forEach(score => {
-                    totalScore += score;
-                });
+            if(userIndex) {
+                this.user = allGames[userIndex];
             } else {
-                user.scores = [game.score];
+                this.user = new User(this.username);
             }
-            user.average = totalScore / user.scores.length;
-            
-            
-            
-            
-            
-            allGames.push(user);
         } else {
-            allGames = [game];
+            this.user = new User(this.username);
+            allGames = [];
         }
-        // console.log(user);
 
-        localStorage.setItem('allGames', JSON.stringify((allGames))); 
+        this.user.scores.push(game.score);
+
+        let totalScore = 0;
+        this.user.scores.forEach(score => {
+            totalScore += score;
+        });
+        this.user.average = totalScore / this.user.scores.length;
+
+        allGames.push(this.user);
+
+        localStorage.setItem('allGames', JSON.stringify((allGames)));
     }
 };
 

@@ -15,5 +15,4 @@ form.addEventListener('submit', event => {
     
     highscoreApi.init(username);
     window.location = 'html/game.html';  
-    highscoreApi.storeFinalGame();
 });

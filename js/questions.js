@@ -37,6 +37,7 @@ function makeTemplate() {
 let chosen = [];
 let selectedQuestion = {};
 const root = document.getElementById('root');
+var timer;
 
 
 function getRandomQuestion(roundDifficulty, category) {
@@ -59,7 +60,7 @@ function getRandomQuestion(roundDifficulty, category) {
         chosen.push(selectedQuestion);
         const dom = populateForm();
         root.appendChild(dom);
-        const timer = new Timer;
+        timer = new Timer;
         timer.updateTimer();
     }
 }
@@ -119,25 +120,20 @@ class Round {
     checkAnswer(score) {
         const form = document.getElementById('activeQuestion');
         if(form){
-        
-            // form.addEventListener('click', event => {
-            //     event.preventDefault();
-            // });
             const options = document.querySelectorAll('p');
             options.forEach(option => {
                 option.addEventListener('click', event => {
                     const root = document.getElementById('root');
                     let rootLength = root.childNodes.length - 1;
+                    timer.resetTimer();
                     for(let i = rootLength; i > 6; i--) {
                         root.removeChild(root.lastChild);
                     }
-                    console.log(root.childNodes);
                     if(event.target.id === selectedQuestion.correctAnswer) {
                         highscoreApi.updateScore(score);
                         const currentScore = new Score;
                         currentScore.update();
                         const table = document.getElementById('questionsTable');
-                        console.log(table);
                         table.classList.remove('hidden');
                     }
                     else {
