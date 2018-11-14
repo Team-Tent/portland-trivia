@@ -100,7 +100,7 @@ function gameOver() {
     return html`
         <h2>Game Over!</h2>
         <h3>Your score: ${game.score}</h3>
-        <button onclick="window.location='../html/highscore.html'">View High Scores</button>
+        <button onclick="window.location='highscore.html'">View High Scores</button>
     `;
 }
 
