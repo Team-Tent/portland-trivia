@@ -1,3 +1,5 @@
+import Round from './questions.js';
+
 let count;
 var interval;
 var timer;
@@ -5,8 +7,12 @@ var timer;
 function startTimer() {
     timer.innerHTML = `Timer: ${count}`;
     count--;
-    if(count < 1) {
+    if(count < 0) {
         stopTimer();
+        const form = document.getElementById('activeQuestion');
+        form.innerHTML = '';
+        const round = new Round;
+        round.endGame(false);
     }
 }
 
