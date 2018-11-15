@@ -1,5 +1,6 @@
 import Header from './header.js';
-import Chart from './chart.js';
+import Graph from './chart.js';
+// import highscoreApi from '../api/highscore-api.js';
 
 const headerSection = document.getElementById('header');
 const root = document.getElementById('root');
@@ -7,5 +8,7 @@ const root = document.getElementById('root');
 const header = new Header;
 headerSection.appendChild(header.render());
 
-const chart = new Chart;
+const chart = new Graph;
 root.appendChild(chart.render());
+chart.renderTable();
+chart.renderGraph();
