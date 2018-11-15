@@ -17,7 +17,7 @@ function makeTemplate() {
     user = allGames[userIndex];
     return html `
         <div>
-            <canvas id="progress" width="200" height="200"></canvas>
+            <canvas id="progress" width="200" height="500"></canvas>
         </div>   
 
         <table id="dataTable"></table>
@@ -37,6 +37,8 @@ function makeGraph() {
         collHigh.push(collective.collHigh);
         collAvg.push(collective.collAvg);
     });
+    
+    /* eslint-disable-next-line */
     const chart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -60,17 +62,17 @@ function makeGraph() {
                 {
                     label: 'User Average',
                     data: userAvg,
-                    backgroundColor: 'red',
-                    borderColor: 'red',
+                    backgroundColor: 'yellow',
+                    borderColor: 'yellow',
                     borderWidth: 2,
                     fill: false
                 },
                 {
                     label: 'High Score',
                     data: collHigh,
-                    backgroundColor: 'yellow',
-                    borderColor: 'yellow',
-                    borderWidth: 10,
+                    backgroundColor: 'red',
+                    borderColor: 'red',
+                    borderWidth: 2,
                     fill: false
                 },
                 {

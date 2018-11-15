@@ -1,6 +1,5 @@
 import Header from './header.js';
 import Graph from './chart.js';
-// import highscoreApi from '../api/highscore-api.js';
 
 const headerSection = document.getElementById('header');
 const root = document.getElementById('root');
