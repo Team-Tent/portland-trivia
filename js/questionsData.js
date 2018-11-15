@@ -60,7 +60,7 @@ export default [
         'correctAnswer': 'C',
     },   
     {
-        'question': 'What NPR host and Portland native occasionally tours with Pink Martini?',
+        'question': 'What NPR host and former Portland resident occasionally tours with Pink Martini?',
         'category': 'social',
         'level': 1,
         'answerA': 'Audie Cornish',
