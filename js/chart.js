@@ -30,18 +30,23 @@ function makeGraph() {
     var userAvg = [];
     var collHigh = [];
     var collAvg = [];
+    var labels = [];
+    let count = 0;
 
     user.scores.forEach(() => {
+        count++;
         userHigh.push(user.highscore);
         userAvg.push(user.average);
         collHigh.push(collective.collHigh);
         collAvg.push(collective.collAvg);
+        labels.push(`Attempt ${count}`);
     });
     
     /* eslint-disable-next-line */
     const chart = new Chart(ctx, {
         type: 'line',
         data: {
+            labels: labels,
             datasets: [
                 {
                     label: 'User Scores',
