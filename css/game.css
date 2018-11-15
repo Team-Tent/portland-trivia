@@ -3,52 +3,72 @@
 }
 
 body {
-    margin: 3vw;
+    margin: 2vw;
     display: flex;
     justify-content: center;
 }
 
 table {
-    width: 50%;
+    width: 100%;
     text-align: center;
-    height: 200px;
-    margin: 4vw;
+    margin-top: 3vh;
+    border: 4px solid rgb(24,51,16);
+    padding: 2vw;
+    clear: both;
+    background-color: rgba(155, 155, 155, 0.25);
 }
 button {
-    font-size: 20px;
+    font-size: 28px;
     border-radius: 12px;
     width: 100px;
-}
-
-.buttonA {
-    font-size: 20px;
-    border-radius: 12px;
-    width: 100px;
+    height: 100px;
+    border: 1px dashed rgb(24,51,16);
 }
 
 button:hover {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     color: white;
 }
 button:disabled {
     background-color: gray;
     color: gray;
 }
+th {
+    font-size: 24px;
+    background-color: rgb(24,51,16);
+    border-radius: 3vw;
+    border: black 1px solid;
+    color: white;
+}
+td {
+    padding: 2vw;
+}
 
 #activeQuestion p:hover {
     color: lightsteelblue;
     cursor: pointer;
 }
-h2 {
-    width: 50%;
+#levelDisplay {
     margin: 0;
-    display: inline;
-    margin: 3vw;
+    /* display: inline-block; */
     text-align: center;
-    border: 1px solid darkgreen;
+    border: 4px solid rgb(24,51,16);
     padding: 2vw;
+    background-color: rgba(253,201,48, 0.2);
+    float: left;
+    margin-left: 4vw;
+    margin-bottom: 3vh;
 }
-
+#scoreDisplay {
+    margin: 0;
+    /* display: inline; */
+    text-align: center;
+    border: 4px solid rgb(24,51,16);
+    padding: 2vw;
+    background-color: rgba(253,201,48, 0.2);
+    float: right;
+    margin-right: 4vw;
+}
 
 /* Mobile */
 @media screen and (min-width: 300px) {
