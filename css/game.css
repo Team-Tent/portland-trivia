@@ -1,3 +1,55 @@
 .hidden {
     display: none;
 }
+
+@media screen and (min-width: 300px) {
+    table {
+        text-align: center;
+        height: 175px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    table {
+        width: 50%;
+        text-align: center;
+        height: 200px;
+    }
+}
+
+button {
+    font-size: 20px;
+    border-radius: 12px;
+    width: 100px;
+    }
+
+.buttonA {
+    font-size: 20px;
+    border-radius: 12px;
+    width: 100px;
+    }
+
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+/* button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px); 
+    }*/
+
+button:disabled {
+    background-color: gray;
+}
+
+/* body {
+    background-image: url("../assets/tent.png");
+    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: bottom;
+    top: 0;
+    z-index: -10;
+    opacity: 0.2;
+ } */

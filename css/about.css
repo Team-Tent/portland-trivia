@@ -1,11 +1,55 @@
+#about {
+    background-color: rgb(254, 203, 7);
+}
+
 #tyler img {
-    width: 160px;
+    width: 210px;
     padding: 40px;
     border-radius: 120px;
     background-color: rgba(95, 103, 0, 1);
     margin: 20px;
+    float: left;
 }
 
-#about {
-    color: rgb(254, 203, 7);
+#shaba img {
+    width: 250px;
+    padding: 40px;
+    border-radius: 120px;
+    background-color: rgba(95, 103, 0, 1);
+    margin: 20px;
+    float: left;
+}
+
+#lise img {
+    width: 220px;
+    padding: 40px;
+    border-radius: 120px;
+    background-color: rgba(95, 103, 0, 1);
+    margin: 20px;
+    float: left;
+}
+
+section {
+    clear: both;
+    text-align: center;
+}
+
+#tyler p {
+    float: center;
+    margin-top: 200px;
+    text-align: center;
+    padding-top: 170px;
+}
+
+#shaba p {
+    float: center;
+    padding-top: 140px;
+    text-align: center;
+}
+
+
+#lise p {
+    float: center;
+    padding-top: 135px;
+    text-align: center;
 }
