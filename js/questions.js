@@ -132,6 +132,8 @@ class Round {
         const form = document.getElementById('activeQuestion');
         if(form){
             const options = document.querySelectorAll('p');
+            const table = document.getElementById('questionsTable');
+            const currentScore = new Score;
             options.forEach(option => {
                 option.addEventListener('click', event => {
                     const root = document.getElementById('root');
@@ -142,10 +144,6 @@ class Round {
                     }
                     if(event.target.id === selectedQuestion.correctAnswer) {
                         highscoreApi.updateScore(score);
-                        const currentScore = new Score;
-                        currentScore.update();
-                        const table = document.getElementById('questionsTable');
-                        table.classList.remove('hidden');
                         const level = new Level;
                         level.update();
                         if(chosen.length === 27) {
@@ -154,8 +152,10 @@ class Round {
                         }
                     }
                     else {
-                        root.appendChild(gameOver(false));
+                        highscoreApi.updateScore(score * -1);
                     }
+                    table.classList.remove('hidden');
+                    currentScore.update();
                 });
             });
         }

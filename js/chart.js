@@ -15,6 +15,7 @@ function makeTemplate() {
         return games.username === game.username;
     });
     user = allGames[userIndex];
+    
     return html `
         <div>
             <canvas id="progress" width="200" height="500"></canvas>
