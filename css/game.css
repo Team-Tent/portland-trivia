@@ -32,6 +32,7 @@ button {
     height: 100px;
     border: 1px dashed rgb(24,51,16);
     color: rgb(9,22,2);
+    text-align: center;
 }
 
 button:hover {
@@ -84,5 +85,8 @@ td {
     table {
         text-align: center;
         height: 175px;
+    }
+    button {
+        text-align: center;
     }
 }
