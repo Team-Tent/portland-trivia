@@ -2,32 +2,29 @@
     display: none;
 }
 
-@media screen and (min-width: 300px) {
-    table {
-        text-align: center;
-        height: 175px;
-    }
+body {
+    margin: 3vw;
+    display: flex;
+    justify-content: center;
 }
 
-@media screen and (min-width: 600px) {
-    table {
-        width: 50%;
-        text-align: center;
-        height: 200px;
-    }
+table {
+    width: 50%;
+    text-align: center;
+    height: 200px;
+    margin: 4vw;
 }
-
 button {
     font-size: 20px;
     border-radius: 12px;
     width: 100px;
-    }
+}
 
 .buttonA {
     font-size: 20px;
     border-radius: 12px;
     width: 100px;
-    }
+}
 
 button:hover {
     background-color: #4CAF50; /* Green */
@@ -39,6 +36,24 @@ button:disabled {
 }
 
 #activeQuestion p:hover {
-       color: lightsteelblue;
-       cursor: pointer;
+    color: lightsteelblue;
+    cursor: pointer;
+}
+h2 {
+    width: 50%;
+    margin: 0;
+    display: inline;
+    margin: 3vw;
+    text-align: center;
+    border: 1px solid darkgreen;
+    padding: 2vw;
+}
+
+
+/* Mobile */
+@media screen and (min-width: 300px) {
+    table {
+        text-align: center;
+        height: 175px;
+    }
 }
