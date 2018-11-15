@@ -43,6 +43,7 @@ section {
     text-align: center;
     padding-top: 170px;
     padding-right: 20px;
+    font-size: 20px;
 }
 
 #shaba p {
@@ -50,6 +51,7 @@ section {
     padding-top: 140px;
     text-align: center;
     padding-right: 20px;
+    font-size: 20px;
 }
 
 #lise p {
@@ -57,11 +59,12 @@ section {
     padding-top: 135px;
     text-align: center;
     padding-right: 20px;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 400px) {
     nav {
-        display: none;
+        /* display: none; */
     }
 
     #tyler p {
