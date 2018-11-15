@@ -9,7 +9,9 @@ function makeTemplate() {
 
 class Score {
     constructor() {
-        this.score = highscoreApi.getGame().score;
+        var game = highscoreApi.getGame();
+        game.score = 0;
+        localStorage.setItem('game', JSON.stringify(game));
     }
     render() {
         const dom = makeTemplate();

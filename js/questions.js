@@ -118,7 +118,8 @@ function gameOver(win) {
 
 class Round {
     constructor(){
-        this.questions = questions;   
+        this.questions = questions; 
+        this.currentScore = new Score;  
     }
     render() {
         const dom = makeTemplate();
@@ -136,7 +137,7 @@ class Round {
         if(form){
             const options = document.querySelectorAll('p');
             const table = document.getElementById('questionsTable');
-            const currentScore = new Score;
+            
             options.forEach(option => {
                 option.addEventListener('click', event => {
                     const root = document.getElementById('root');
@@ -154,7 +155,7 @@ class Round {
                     const level = new Level;
                     level.update();
                     table.classList.remove('hidden');
-                    currentScore.update();
+                    this.currentScore.update();
                     
                     if(chosen.length === 27) {
                         table.classList.add('hidden');
