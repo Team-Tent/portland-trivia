@@ -36,7 +36,7 @@ const highscoreApi = {
         return JSON.parse(localStorage.getItem('allGames'));
     },
 
-    storeFinalGame(username) {
+    storeFinalGame() {
         const game = JSON.parse(localStorage.getItem('game'));
         var allGames = JSON.parse(localStorage.getItem('allGames'));
         var user;
@@ -50,10 +50,10 @@ const highscoreApi = {
                 user = allGames[userIndex];
                 allGames.splice(userIndex, 1);
             } else {
-                user = new User(username);
+                user = new User(game.username);
             }
         } else {
-            user = new User(username);
+            user = new User(game.username);
             allGames = [];
         }
 

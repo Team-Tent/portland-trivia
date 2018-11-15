@@ -24,9 +24,9 @@ class Timer {
     constructor() {
         count = 29;
         timer = document.getElementById('timer');
-        timer.innerHTML = `Timer: ${30}`;
     }
     updateTimer() {       
+        timer.innerHTML = `Timer: ${30}`;
         interval = setInterval(startTimer, 1000);
     }
     resetTimer() {
