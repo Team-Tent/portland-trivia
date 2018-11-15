@@ -44,9 +44,6 @@ main {
 
 /* Mobile layout */
 @media screen and (max-width: 400px) {
-    nav {
-        display: none;
-    }
     #rules h2 {
         background-color: rgb(24,51,16);
         color: white;
