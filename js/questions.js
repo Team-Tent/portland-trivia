@@ -109,6 +109,7 @@ function gameOver(win) {
         <h2>${message}</h2>
         <h3>Your score: ${game.score}</h3>
         <button onclick="window.location='highscore.html'">View High Scores</button>
+        <button onclick="window.location='index.html'">Play Again</button>
     `;
 }
 
