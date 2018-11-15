@@ -1,3 +1,43 @@
 #highscores {
     color: rgb(254, 203, 7);
 }
+
+body {
+    background-color: rgba(255, 221, 118, 0.2);
+    margin: auto;
+}
+
+#graph {
+    width: 70%;
+    margin: auto;
+    clear: both;
+}
+
+#dataTable {
+    margin: auto;
+    border: 2px solid rgb(24,51,16);
+    border-radius: 40%;
+    width: 20%;
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+td {
+    padding: 2%;
+}
+
+button {
+    float: right;
+    margin: 2%;
+    border-radius: 30%;
+    background-color: rgb(253,201,48);
+    height: 10vh;
+    outline: none;
+}
+
+@media screen and (max-width: 400px) {
+    #dataTable {
+        width: 70%;
+    }
+}

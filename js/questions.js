@@ -106,7 +106,7 @@ function gameOver(win) {
         choice.disabled = true;
     });
 
-    highscoreApi.storeFinalGame(highscoreApi.getGame().username);
+    highscoreApi.storeFinalGame();
     return html`
         <h2>${message}</h2>
         <h3>Your score: ${game.score}</h3>
@@ -116,10 +116,10 @@ function gameOver(win) {
 }
 
 
+var currentScore = new Score;
 class Round {
     constructor(){
         this.questions = questions; 
-        this.currentScore = new Score;  
     }
     render() {
         const dom = makeTemplate();
@@ -155,7 +155,7 @@ class Round {
                     const level = new Level;
                     level.update();
                     table.classList.remove('hidden');
-                    this.currentScore.update();
+                    currentScore.update();
                     
                     if(chosen.length === 27) {
                         table.classList.add('hidden');
@@ -169,5 +169,6 @@ class Round {
         root.appendChild(gameOver(win));
     }
 }
+
 
 export default Round;
