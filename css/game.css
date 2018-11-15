@@ -33,23 +33,12 @@ button:hover {
     background-color: #4CAF50; /* Green */
     color: white;
 }
-
-/* button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px); 
-    }*/
-
 button:disabled {
     background-color: gray;
+    color: gray;
 }
 
-/* body {
-    background-image: url("../assets/tent.png");
-    background-repeat: no-repeat;
-    object-fit: cover;
-    object-position: bottom;
-    top: 0;
-    z-index: -10;
-    opacity: 0.2;
- } */
+#activeQuestion p:hover {
+       color: lightsteelblue;
+       cursor: pointer;
+}
