@@ -92,7 +92,9 @@ function gameOver(win) {
     const choices = document.querySelectorAll('button[name="choice"]');
     var message = '';
     if(win) {
-        message = 'You\'re a true Portlander! You win!';
+        const table = document.getElementById('questionsTable');
+        table.classList.add('hidden');
+        message = 'Thanks for Playing!';
     }
     else {
         message = 'Game over!';
@@ -145,18 +147,19 @@ class Round {
                     }
                     if(event.target.id === selectedQuestion.correctAnswer) {
                         highscoreApi.updateScore(score);
-                        const level = new Level;
-                        level.update();
-                        if(chosen.length === 27) {
-                            table.classList.add('hidden');
-                            root.appendChild(gameOver(true));
-                        }
                     }
                     else {
                         highscoreApi.updateScore(score * -1);
                     }
+                    const level = new Level;
+                    level.update();
                     table.classList.remove('hidden');
                     currentScore.update();
+                    
+                    if(chosen.length === 27) {
+                        table.classList.add('hidden');
+                        root.appendChild(gameOver(true));
+                    }
                 });
             });
         }

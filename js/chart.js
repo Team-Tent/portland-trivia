@@ -15,7 +15,7 @@ function makeTemplate() {
         return games.username === game.username;
     });
     user = allGames[userIndex];
-    
+
     return html `
         <div>
             <canvas id="progress" width="200" height="500"></canvas>
@@ -129,6 +129,8 @@ function makeDataTable() {
         <tr>
             <td><strong>Collective Average: </strong>${collective.collAvg}</td>
         </tr>
+
+        <button onclick="window.location='index.html'">Play Again</button>
     `;
 }
 
