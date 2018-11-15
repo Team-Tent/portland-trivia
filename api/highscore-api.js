@@ -32,6 +32,10 @@ const highscoreApi = {
         return JSON.parse(localStorage.getItem('game'));
     },
 
+    getAllGames() {
+        return JSON.parse(localStorage.getItem('allGames'));
+    },
+
     storeFinalGame(username) {
         const game = JSON.parse(localStorage.getItem('game'));
         var allGames = JSON.parse(localStorage.getItem('allGames'));
@@ -59,7 +63,7 @@ const highscoreApi = {
         user.scores.forEach(score => {
             totalScore += score;
         });
-        user.average = totalScore / user.scores.length;
+        user.average = Math.round(totalScore / user.scores.length);
         user.highscore = Math.max(...user.scores);
 
         allGames.push(user);
@@ -85,9 +89,13 @@ const highscoreApi = {
         });
 
         collective.collHigh = Math.max(...highscores);
-        collective.collAvg = totalAvg / averages.length;
+        collective.collAvg = Math.round(totalAvg / averages.length);
 
         localStorage.setItem('collective', JSON.stringify(collective));
+    },
+
+    getCollective() {
+        return JSON.parse(localStorage.getItem('collective'));
     }
 };
 
