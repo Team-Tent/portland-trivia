@@ -2,8 +2,12 @@
     color: rgb(254, 203, 7);
 }
 
+body {
+    background-color: rgba(253,201,48, 0.2);
+}
+
 #tyler img {
-    width: 210px;
+    width: 230px;
     padding: 40px;
     border-radius: 120px;
     background-color: rgba(95, 103, 0, 1);
@@ -36,20 +40,50 @@ section {
 
 #tyler p {
     float: center;
-    margin-top: 200px;
     text-align: center;
     padding-top: 170px;
+    padding-right: 20px;
 }
 
 #shaba p {
     float: center;
     padding-top: 140px;
     text-align: center;
+    padding-right: 20px;
 }
-
 
 #lise p {
     float: center;
     padding-top: 135px;
     text-align: center;
+    padding-right: 20px;
 }
+
+@media screen and (max-width: 400px) {
+    nav {
+        display: none;
+    }
+
+    #tyler p {
+        float: center;
+        text-align: center;
+        padding-top: 170px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    #shaba p {
+        float: center;
+        padding-top: 140px;
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    #lise p {
+        float: center;
+        padding-top: 135px;
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
