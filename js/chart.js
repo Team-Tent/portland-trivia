@@ -130,7 +130,7 @@ function makeDataTable() {
             <td><strong>Collective Average: </strong>${collective.collAvg}</td>
         </tr>
 
-        <button onclick="window.location='index.html'">Play Again</button>
+        <button onclick="window.location='index.html'">Play Game</button>
     `;
 }
 
