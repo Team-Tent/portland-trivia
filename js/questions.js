@@ -99,8 +99,8 @@ function gameOver(win) {
     else {
         message = 'Game over!';
     }
-    scoreDisplay.innerHTML = '';
-    levelDisplay.innerHTML = '';
+    scoreDisplay.classList.add('hidden');
+    levelDisplay.classList.add('hidden');
 
     choices.forEach(choice => {
         choice.disabled = true;
@@ -110,8 +110,10 @@ function gameOver(win) {
     return html`
         <h2>${message}</h2>
         <h3>Your score: ${game.score}</h3>
-        <button onclick="window.location='highscore.html'">View High Scores</button>
-        <button onclick="window.location='index.html'">Play Again</button>
+        <div id="gameOverButtons">
+            <button onclick="window.location='highscore.html'" id="highScores">View High Scores</button>
+            <button onclick="window.location='index.html'" id="playAgain">Play Again</button>
+        </div>
     `;
 }
 

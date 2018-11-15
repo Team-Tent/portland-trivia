@@ -6,9 +6,6 @@ rgb(224,213,213) Cream
 rgb(246,201,110) Yellow
 */
 
-.hidden {
-    display: none;
-}
 
 body {
     margin: 2vw;
@@ -33,7 +30,11 @@ button {
     border: 1px dashed rgb(24,51,16);
     color: rgb(9,22,2);
     text-align: center;
+    clear: both;
+    display: inline-block;
 }
+                                                                        
+
 
 button:hover {
     background-color: rgb(246,201,110);
@@ -59,27 +60,36 @@ td {
     cursor: pointer;
 }
 #levelDisplay {
-    margin: 0;
-    text-align: center;
-    border: 4px solid rgb(88,101,58);
-    padding: 2vw;
-    background-color: rgba(253,201,48, 0.2);
     float: left;
-    margin-left: 4vw;
-    margin-bottom: 3vh;
-    color: rgb(9,22,2);
 }
 #scoreDisplay {
-    margin: 0;
+    float: right;
+} 
+#gameOverButtons {
+    display: flex;
+}
+#gameOverButtons button{
+    margin: 2vw;
+}
+.levelDisplayClass {
+    margin: auto;
     text-align: center;
     border: 4px solid rgb(88,101,58);
     padding: 2vw;
     background-color: rgba(253,201,48, 0.2);
-    float: right;
-    margin-right: 4vw;
     color: rgb(9,22,2);
 }
+form {
+    clear: both;
+    width: 70%;
+    margin: auto;
+}
 
+.hidden {
+    display: none;
+    border: none;
+    background-color: white;
+}
 /* Mobile */
 @media screen and (min-width: 300px) {
     table {

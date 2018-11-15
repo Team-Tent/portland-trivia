@@ -4,7 +4,7 @@ var round = 1;
 
 function makeTemplate(level) {
     return html`
-        <h2 id="levelDisplay">Level: ${level}</h2>
+        <h2 id="levelDisplay" class="levelDisplayClass">Level: ${level}</h2>
     `;
 }
 

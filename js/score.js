@@ -3,7 +3,7 @@ import html from '../js/html.js';
 
 function makeTemplate() {
     return html`
-        <h2 id="scoreDisplay">Current Score: ${highscoreApi.getGame().score}</h2>
+        <h2 id="scoreDisplay" class="levelDisplayClass">Current Score: ${highscoreApi.getGame().score}</h2>
     `;
 }
 
