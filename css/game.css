@@ -11,6 +11,7 @@ body {
     margin: 2vw;
     display: flex;
     justify-content: center;
+    background-color:rgba(253,201,48, 0.2);
 }
 
 table {
