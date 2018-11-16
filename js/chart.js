@@ -31,6 +31,7 @@ function makeGraph() {
     var userAvg = [];
     var collHigh = [];
     var collAvg = [];
+    var marty = [];
     var labels = [];
     let count = 0;
 
@@ -40,6 +41,7 @@ function makeGraph() {
         userAvg.push(user.average);
         collHigh.push(collective.collHigh);
         collAvg.push(collective.collAvg);
+        marty.push(500);
         labels.push(`Attempt ${count}`);
     });
     
@@ -86,6 +88,14 @@ function makeGraph() {
                     data: collAvg,
                     backgroundColor: 'orange',
                     borderColor: 'orange',
+                    borderWidth: 2,
+                    fill: false
+                },
+                {
+                    label: 'Marty\'s Score',
+                    data: marty,
+                    backgroundColor: 'lightsteelblue',
+                    borderColor: 'lightsteelblue',
                     borderWidth: 2,
                     fill: false
                 }
