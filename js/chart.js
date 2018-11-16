@@ -27,13 +27,13 @@ function makeTemplate() {
 
 function makeGraph() {
     const ctx = document.getElementById('progress').getContext('2d');
-    var userHigh = [];
-    var userAvg = [];
-    var collHigh = [];
-    var collAvg = [];
-    var marty = [];
-    var injoong = [];
-    var labels = [];
+    var userHigh = [user.highscore];
+    var userAvg = [user.average];
+    var collHigh = [collective.collHigh];
+    var collAvg = [collective.collAvg];
+    var marty = [500];
+    var injoong = [200];
+    var labels = ['0'];
     let count = 0;
 
     user.scores.forEach(() => {
@@ -56,8 +56,8 @@ function makeGraph() {
                 {
                     label: 'User Scores',
                     data: user.scores,
-                    backgroundColor: 'purple',
-                    borderColor: 'purple',
+                    backgroundColor: 'pink',
+                    borderColor: 'pink',
                     borderWidth: 2,
                     fill: false
                 },
