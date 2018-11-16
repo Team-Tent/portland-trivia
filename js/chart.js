@@ -68,8 +68,8 @@ function makeGraph() {
                 {
                     label: 'User Average',
                     data: userAvg,
-                    backgroundColor: 'yellow',
-                    borderColor: 'yellow',
+                    backgroundColor: 'blue',
+                    borderColor: 'blue',
                     borderWidth: 2,
                     fill: false
                 },

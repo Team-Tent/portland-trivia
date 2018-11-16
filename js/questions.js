@@ -108,7 +108,7 @@ function gameOver(win) {
 
     highscoreApi.storeFinalGame();
     return html`
-        <h2>${message}</h2>
+        <h2 id="message">${message}</h2>
         <h3>Your score: ${game.score}</h3>
         <div id="gameOverButtons">
             <button onclick="window.location='highscore.html'" id="highScores">View High Scores</button>

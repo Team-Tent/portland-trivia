@@ -68,6 +68,9 @@ td {
     color: lightsteelblue;
     cursor: pointer;
 }
+#activeQuestion {
+    margin-top: 20vh;
+}
 #levelDisplay {
     float: left;
 }
@@ -79,6 +82,7 @@ td {
 }
 #gameOverButtons button{
     margin: 2vw;
+    text-align: center;
 }
 .levelDisplayClass {
     margin: auto;
@@ -93,7 +97,15 @@ form {
     width: 70%;
     margin: auto;
 }
-
+h3, #message {
+    text-align: center;
+}
+h3 {
+    font-size: 4vw;
+}
+#message {
+    font-size: 8vw;
+}
 .hidden {
     display: none;
     border: none;
