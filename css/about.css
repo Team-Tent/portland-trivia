@@ -63,9 +63,6 @@ section {
 }
 
 @media screen and (max-width: 400px) {
-    nav {
-        /* display: none; */
-    }
 
     #tyler p {
         float: center;

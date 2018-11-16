@@ -1,6 +1,7 @@
 #home {
     color: rgb(254, 203, 7);
 }
+
 main {
     display: flex;
     flex-direction: column;
@@ -8,6 +9,7 @@ main {
     margin-top: 3vw;
     margin-bottom: 0;
 }
+
 #rules h2 {
     background-color: rgb(24,51,16);
     color: white;
@@ -17,16 +19,19 @@ main {
     border-bottom: 2px solid rgb(253,201,48);
     margin-bottom: 0;
 }
+
 #rules ul {
     list-style-type: none;
     background-color: rgba(253,201,48, 0.2);
     padding: 2vw;
     margin: 2vw;
 }
+
 #rules li {
     padding: 1vw;
     margin: 1vw;
 }
+
 #userInfo {
     display: flex;
     justify-content: space-around;
@@ -34,6 +39,7 @@ main {
     padding: 2vw;
     background-color: rgba(253,201,48, 0.2);
 }
+
 #userInfo button {
     margin-right: 6vw;
     background-color: rgb(253,201,48);
@@ -42,7 +48,6 @@ main {
 }
 
 
-/* Mobile layout */
 @media screen and (max-width: 400px) {
     #rules h2 {
         background-color: rgb(24,51,16);
@@ -53,16 +58,19 @@ main {
         border-bottom: 2px solid rgb(253,201,48);
         margin-bottom: 0;
     }
+    
     #rules ul {
         list-style-type: none;
         background-color: rgba(253,201,48, 0.2);
         padding: 2vw;
         margin: 2vw;
     }
+    
     #rules li {
         padding: 1vw;
         margin: 1vw;
     }
+    
     #userInfo {
         display: flex;
         justify-content: space-around;
@@ -70,10 +78,10 @@ main {
         padding: 2vw;
         background-color: rgba(253,201,48, 0.2);
     }
+    
     #userInfo button {
         margin-right: 6vw;
         background-color: rgb(253,201,48);
         border:  1px solid rgb(24,51,16);
-        
     }
 }

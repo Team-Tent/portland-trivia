@@ -1,6 +1,3 @@
-// store game in allGames after game over
-
-
 import Round from './questions.js';
 import Score from './score.js';
 import Level from './level.js';

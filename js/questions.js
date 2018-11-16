@@ -146,7 +146,6 @@ class Round {
                     if(event.target.id === selectedQuestion.correctAnswer) {
                         highscoreApi.updateScore(score);
                         option.classList.add('green');
-                        console.log(option);
                     }
                     else {
                         highscoreApi.updateScore(score * -1);

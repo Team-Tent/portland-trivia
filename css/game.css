@@ -1,12 +1,3 @@
-/* Colors 
-rgb(9,22,2) Black
-rgb(88,101,58) Dark Olive Green
-rgb(159,143,135) Light Brown
-rgb(224,213,213) Cream
-rgb(246,201,110) Yellow
-*/
-
-
 body {
     margin: 2vw;
     display: flex;
@@ -23,6 +14,7 @@ table {
     clear: both;
     background-color: rgb(224,213,213);
 }
+
 button {
     font-size: 28px;
     border-radius: 12px;
@@ -39,20 +31,25 @@ button {
 .green {
     background-color: green;
 }
+
 .red {
     background-color: red;
 }
+
 .redText {
     color: red;
 }
+
 button:hover {
     background-color: rgb(246,201,110);
     color: white;
 }
+
 button:disabled {
     background-color: rgb(159,143,135);
     color: rgb(159,143,135);
 }
+
 th {
     font-size: 24px;
     background-color: rgb(88,101,58);
@@ -60,6 +57,7 @@ th {
     border: rgb(9,22,2) 2px solid;
     color: white;
 }
+
 td {
     padding: 2vw;
 }
@@ -68,22 +66,28 @@ td {
     color: lightsteelblue;
     cursor: pointer;
 }
+
 #activeQuestion {
     margin-top: 20vh;
 }
+
 #levelDisplay {
     float: left;
 }
+
 #scoreDisplay {
     float: right;
 } 
+
 #gameOverButtons {
     display: flex;
 }
+
 #gameOverButtons button{
     margin: 2vw;
     text-align: center;
 }
+
 .levelDisplayClass {
     margin: auto;
     text-align: center;
@@ -92,26 +96,31 @@ td {
     background-color: rgba(253,201,48, 0.2);
     color: rgb(9,22,2);
 }
+
 form {
     clear: both;
     width: 70%;
     margin: auto;
 }
+
 h3, #message {
     text-align: center;
 }
+
 h3 {
     font-size: 4vw;
 }
+
 #message {
     font-size: 8vw;
 }
+
 .hidden {
     display: none;
     border: none;
     background-color: white;
 }
-/* Mobile */
+
 @media screen and (min-width: 300px) {
     table {
         text-align: center;
