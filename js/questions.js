@@ -143,26 +143,33 @@ class Round {
             options.forEach(option => {
                 option.addEventListener('click', event => {
                     const root = document.getElementById('root');
-                    let rootLength = root.childNodes.length - 1;
-                    timer.resetTimer();
-                    for(let i = rootLength; i > 9; i--) {
-                        root.removeChild(root.lastChild);
-                    }
                     if(event.target.id === selectedQuestion.correctAnswer) {
                         highscoreApi.updateScore(score);
+                        option.classList.add('green');
+                        console.log(option);
                     }
                     else {
                         highscoreApi.updateScore(score * -1);
+                        option.classList.add('red');
                     }
-                    const level = new Level;
-                    level.update();
-                    table.classList.remove('hidden');
-                    currentScore.update();
+                    setTimeout(() => {
+                        let rootLength = root.childNodes.length - 1;
+                        timer.resetTimer();
+                        for(let i = rootLength; i > 9; i--) {
+                            root.removeChild(root.lastChild);
+                        }
+                        const level = new Level;
+                        level.update();
+                        table.classList.remove('hidden');
+                        currentScore.update();
+                        if(chosen.length === 27) {
+                            table.classList.add('hidden');
+                            root.appendChild(gameOver(true));
+                        }
+                        
+                    }, 500);
                     
-                    if(chosen.length === 27) {
-                        table.classList.add('hidden');
-                        root.appendChild(gameOver(true));
-                    }
+                    
                 });
             });
         }

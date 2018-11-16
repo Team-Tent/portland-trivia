@@ -33,9 +33,15 @@ button {
     text-align: center;
     clear: both;
     display: inline-block;
+    outline: none;
 }
                                                                         
-
+.green {
+    background-color: green;
+}
+.red {
+    background-color: red;
+}
 
 button:hover {
     background-color: rgb(246,201,110);
