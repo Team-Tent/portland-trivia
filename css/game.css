@@ -42,7 +42,9 @@ button {
 .red {
     background-color: red;
 }
-
+.redText {
+    color: red;
+}
 button:hover {
     background-color: rgb(246,201,110);
     color: white;

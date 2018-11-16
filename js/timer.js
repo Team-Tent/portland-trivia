@@ -13,6 +13,10 @@ function startTimer() {
         form.innerHTML = '';
         const round = new Round;
         round.endGame(false);
+        timer.classList.remove('redText');
+    }
+    if(count === 8) {
+        timer.classList.add('redText');
     }
 }
 
