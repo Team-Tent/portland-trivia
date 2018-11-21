@@ -11,7 +11,7 @@ function startTimer() {
         stopTimer();
         const form = document.getElementById('activeQuestion');
         form.innerHTML = '';
-        const round = new Round;
+        const round = new Round();
         round.endGame(false);
         timer.classList.remove('redText');
     }

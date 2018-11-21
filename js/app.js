@@ -11,7 +11,8 @@ headerSection.appendChild(header.render());
 
 form.addEventListener('submit', event => {
     event.preventDefault();
-    const username = event.target.elements.username.value;
+    // since you already have the form variable...
+    const username = form.elements.username.value;
     
     highscoreApi.init(username);
     window.location = 'game.html';  
