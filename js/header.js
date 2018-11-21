@@ -1,6 +1,7 @@
 import html from './html.js';
 
 function makeTemplate() {
+    // use styling, not <strong> on links
     return html`
         <div>
             <img class="logo" src="assets/tent-drawing-cartoon-3.png">

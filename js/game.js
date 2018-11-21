@@ -1,18 +1,22 @@
+// Thesse should agree: Round vs questions.js
 import Round from './questions.js';
 import Score from './score.js';
 import Level from './level.js';
 
 let currentRound = 0;
 
-
-const round = new Round;
+const round = new Round();
 const root = document.getElementById('root');
+// this breaks one-way data flow. Children are now passing
+// Parent data...
 let chosen = round.getChosen();
 
-const level = new Level(currentRound + 1);
+// this will always be 1
+const level = new Level(1);
 root.appendChild(level.render());
 
-const score = new Score;
+const score = new Score();
+
 root.appendChild(score.render());
 root.appendChild(round.render());
 root.addEventListener('click', function(event) {

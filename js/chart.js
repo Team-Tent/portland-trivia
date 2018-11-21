@@ -1,20 +1,23 @@
 import highscoreApi from '../api/highscore-api.js';
 import html from './html.js';
 
-var game;
-var allGames;
-var collective;
-var userIndex;
-var user;
+var game = highscoreApi.getGame();
+var allGames = highscoreApi.getAllGames();
+var collective = highscoreApi.getCollective();
+var user = allGames.find(games => {
+    return games.username === game.username;
+});
 
 function makeTemplate() {
-    game = highscoreApi.getGame();
-    allGames = highscoreApi.getAllGames();
-    collective = highscoreApi.getCollective();
-    userIndex = allGames.findIndex(games => {
-        return games.username === game.username;
-    });
-    user = allGames[userIndex];
+    // These don't belong here, they have nothing to do
+    // with making the template
+
+    // game = highscoreApi.getGame();
+    // allGames = highscoreApi.getAllGames();
+    // collective = highscoreApi.getCollective();
+    // user = allGames.find(games => {
+    //     return games.username === game.username;
+    // });
 
     return html `
         <div id="graph">
@@ -47,6 +50,7 @@ function makeGraph() {
         labels.push(`Attempt ${count}`);
     });
     
+    // Add Chart to `.eslintrc` as a global
     /* eslint-disable-next-line */
     const chart = new Chart(ctx, {
         type: 'line',

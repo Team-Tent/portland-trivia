@@ -1,3 +1,7 @@
+// the issue with using class models
+// is that they don't survive the localStorage round-trip
+// and these don't have any associated behavior, so 
+// just use object literals
 class Game {
     constructor(username) {
         this.username = username;
@@ -15,13 +19,16 @@ class User {
 
 const highscoreApi = {
     init(username) {
-        var game = new Game(username);
+        let game = {
+            username: username,
+            score: 0
+        };
 
         localStorage.setItem('game', JSON.stringify(game));
     },
 
     updateScore(score) {
-        var game = JSON.parse(localStorage.getItem('game'));
+        let game = JSON.parse(localStorage.getItem('game'));
 
         game.score += score;
 
@@ -38,35 +45,27 @@ const highscoreApi = {
 
     storeFinalGame() {
         const game = JSON.parse(localStorage.getItem('game'));
-        var allGames = JSON.parse(localStorage.getItem('allGames'));
-        var user;
+        // use a default value approach:
+        let allGames = JSON.parse(localStorage.getItem('allGames')) || [];
+        
+        let user = allGames.find(games => {
+            return games.username === game.username;
+        });
 
-        if(allGames) {
-            const userIndex = allGames.findIndex(games => {
-                return games.username === game.username;
-            });
-
-            if(userIndex >= 0) {
-                user = allGames[userIndex];
-                allGames.splice(userIndex, 1);
-            } else {
-                user = new User(game.username);
-            }
-        } else {
-            user = new User(game.username);
-            allGames = [];
+        if(!user) {
+            user = {
+                username: game.username,
+                scores: [],
+                average: 0
+            };
+            allGames.push(user);
         }
 
         user.scores.push(game.score);
 
-        let totalScore = 0;
-        user.scores.forEach(score => {
-            totalScore += score;
-        });
+        let totalScore = user.scores.reduce((a, b) => a + b, 0);
         user.average = Math.round(totalScore / user.scores.length);
         user.highscore = Math.max(...user.scores);
-
-        allGames.push(user);
 
         localStorage.setItem('allGames', JSON.stringify((allGames)));
         this.updateCollective();
@@ -74,22 +73,14 @@ const highscoreApi = {
 
     updateCollective() {
         const allGames = JSON.parse(localStorage.getItem('allGames'));
-        var collective = {};
-        var highscores = [];
-        var averages = [];
-        var totalAvg = 0;
-
-        allGames.forEach(game => {
-            highscores.push(game.highscore);
-            averages.push(game.average);
-        });
-
-        averages.forEach(avg => {
-            totalAvg += avg;
-        });
-
-        collective.collHigh = Math.max(...highscores);
-        collective.collAvg = Math.round(totalAvg / averages.length);
+        const highscores = allGames.map(game => game.highscore);
+        const averages = allGames.map(game => game.average);
+        const totalAvg = averages.reduce((a, b) => a + b, 0);
+        
+        const collective = {
+            highScore: Math.max(...highscores),
+            average: Math.round(totalAvg / averages.length)
+        };
 
         localStorage.setItem('collective', JSON.stringify(collective));
     },
