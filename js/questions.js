@@ -65,6 +65,7 @@ function getRandomQuestion(roundDifficulty, category) {
 
 function populateForm() {
 
+    // hmm, two h2 headers? timer is probably not a header
     return html `
         <form id="activeQuestion">
             <h2 id="timer"></h2>
